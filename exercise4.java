@@ -56,8 +56,15 @@ class Lender{
   public boolean view_my_rentals(){
     return false;
   }
-  
+
 }
 
-class Reservation{}
+class Reservation{
+  private LocalDateTime awaited_pick_up;
+
+  public boolean make_rent(){
+    return false;
+  }
+}
+
 class Inventory{}
