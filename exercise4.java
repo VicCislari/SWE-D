@@ -3,17 +3,21 @@ import java.time.LocalDateTime;
 class Main {
 
   public static void main(String[] args) {
+    
     /*
+     * TODO: make some example objects
      * 4 Titles
      * 4 copies of 3 titles -> Inventory
      * 5 copies of the 1 title -> Inventory
-     * 4 lender accounts
+     * 4 lender accounts -> Lender
      * 2 of the lenders have books {1,2,3} -> Rental story
      * 1 of the lender has book {1,2,3,4} -> Rental story
      * 1 of the lender has book {1,3} -> Rental story
-     * need a conflict scenario too.
-     * 
+     * need a conflict scenario too. -> Reservation
+     * 1 Lender reserves a copy of titles 4
+     * 1 Lender reserves a copy of titles 3
      */
+
     System.out.println("Hello World");
   }
 }
