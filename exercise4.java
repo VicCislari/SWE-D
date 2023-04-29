@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 class Main {
   public static void main(String[] args) {
     System.out.println("Hello World");
@@ -19,8 +21,19 @@ class Title{
     private int num_copies;
 }
 
-class Copy{}
+class Copy{
+  private String storage_place;
+    private String id_copy;
+    private boolean rented;
+}
+
+class Rental{
+  private LocalDateTime rental_date;
+  private LocalDateTime return_date;
+  private LocalDateTime reserved_on;
+}
+
 class Lender{}
-class Rental{}
+
 class Reservation{}
 class Inventory{}
