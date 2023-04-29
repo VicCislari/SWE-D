@@ -67,4 +67,9 @@ class Reservation{
   }
 }
 
-class Inventory{}
+class Inventory{
+  public Title view_Books(){//should be an array of Titles...
+    Title title = new Title();
+    return title;
+  }
+}
