@@ -7,7 +7,9 @@ class Main {
 }
 
 class Publisher{}
+
 class Author{}
+
 class Title{
     private String name;
     private String language;
