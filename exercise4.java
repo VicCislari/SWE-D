@@ -1,7 +1,19 @@
 import java.time.LocalDateTime;
 
 class Main {
+
   public static void main(String[] args) {
+    /*
+     * 4 Titles
+     * 4 copies of 3 titles -> Inventory
+     * 5 copies of the 1 title -> Inventory
+     * 4 lender accounts
+     * 2 of the lenders have books {1,2,3} -> Rental story
+     * 1 of the lender has book {1,2,3,4} -> Rental story
+     * 1 of the lender has book {1,3} -> Rental story
+     * need a conflict scenario too.
+     * 
+     */
     System.out.println("Hello World");
   }
 }
