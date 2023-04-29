@@ -33,7 +33,31 @@ class Rental{
   private LocalDateTime reserved_on;
 }
 
-class Lender{}
+class Lender{
+
+  private String fullname;
+  private String id_lender;
+  private String address;
+  private String phone_number;
+  private LocalDateTime birth_date;
+
+  public boolean register(){
+    return false;
+  }
+  public boolean delete_Account(){
+    return false;
+  }
+  public boolean view_Books(){
+    return false;
+  }
+  public boolean reserve_Book(){
+    return false;
+  }
+  public boolean view_my_rentals(){
+    return false;
+  }
+  
+}
 
 class Reservation{}
 class Inventory{}
