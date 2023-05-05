@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class LibSoft {
     private static ReservationManagement reservationManagement = new ReservationManagement();
 
@@ -7,22 +9,16 @@ public class LibSoft {
         Rental rental = new Rental();
         Lender lender = new Lender();
         Copy copy = new Copy();
+        Title title = new Title();
+        LocalDate returnDate =  LocalDate.of(2020, 1, 8);
+        LocalDate rentalDate =  LocalDate.of(2021, 1, 8);
 
         reservationManagement.generateReservation(lender, rental);
-        
-
-     checkNextRental(Title title)
-       
-    generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate)
-        
-
-    viewRentals(Lender lender)
-       
-
- returnCopy(Rental rental)
-       
-
-   checkThroughReservations(Rental rental)
+        reservationManagement.checkNextRental(title);
+        reservationManagement.generateRental(lender, copy, rentalDate, returnDate);
+        reservationManagement.viewRentals(lender);
+        reservationManagement.returnCopy(rental);
+        reservationManagement.checkThroughReservations(rental);//what does this function do again...?
         
     }
 }

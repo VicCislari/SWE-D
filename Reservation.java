@@ -1,8 +1,7 @@
-
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 class Reservation{
-    private LocalDateTime awaited_pick_up;
+    private LocalDate awaited_pick_up;
     private Lender lender;
     private Rental rental;
     private Title title;
@@ -11,11 +10,11 @@ class Reservation{
         System.out.println("created Reservation \n");
     }
 
-    public LocalDateTime getAwaited_pick_up() {
+    public LocalDate getAwaited_pick_up() {
         return this.awaited_pick_up;
     }
 
-    public void setAwaited_pick_up(LocalDateTime awaited_pick_up) {
+    public void setAwaited_pick_up(LocalDate awaited_pick_up) {
         this.awaited_pick_up = awaited_pick_up;
     }
 
