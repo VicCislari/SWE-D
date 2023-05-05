@@ -1,5 +1,3 @@
-import java.time.LocalDateTime;
-import java.sql.Array;
 import java.time.LocalDate;
 
 class ReservationManagement {
@@ -59,5 +57,5 @@ class ReservationManagement {
         Reservation reservation = new Reservation();
         return reservation;
     }
-    
+
 }
