@@ -13,7 +13,7 @@ public class Rental {
             this.rentalDate = rentalDate;
     }
 
-    
+    //
     public LocalDateTime GetReturnDate() {
         return this.returnDate;
     }
