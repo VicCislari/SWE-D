@@ -6,6 +6,10 @@ class Reservation{
     private Rental rental;
     private Title title;
 
+    public Reservation() {
+        System.out.println("created Reservation \n");
+    }
+
     public LocalDateTime getAwaited_pick_up() {
         return this.awaited_pick_up;
     }
