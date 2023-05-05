@@ -1,31 +1,31 @@
 public class Rental {
     
-    private LocalDateTime rentalDate;
-    private LocalDateTime returnDate;
-    private LocalDateTime reservedOn;
+    private LocalDate rentalDate;
+    private LocalDate returnDate;
+    private LocalDate reservedOn;
     private Lender lender;
     private Copy copy;  
 
-    public LocalDateTime GetRentalDate(){
+    public LocalDate GetRentalDate(){
         return this.rentalDate;
     }
     public void SetRentalDate ( rentalDate){
             this.rentalDate = rentalDate;
     }
 
-    public LocalDateTime GetReturnDate() {
+    public LocalDate GetReturnDate() {
         return this.returnDate;
     }
 
-    public void setReturnDate(LocalDateTime returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
 
-       public LocalDateTime GetReservedOn() {
+       public LocalDate GetReservedOn() {
         return this.reservedOn;
     }
 
-    public void setReturnDate(LocalDateTime reservedOn) {
+    public void setReturnDate(LocalDate reservedOn) {
         this.reservedOn = reservedOn;
     }
 
