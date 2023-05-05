@@ -1,4 +1,6 @@
 import java.time.LocalDateTime;
+import java.sql.Array;
+import java.time.LocalDate;
 
 class ReservationManagement {
     private Rental[] rentals;
@@ -24,5 +26,38 @@ class ReservationManagement {
         this.reservations = reservations;
     }
 
+    public boolean generateReservation(Lender lender, Rental rental){
+        System.out.println("generating Reservation \n");
+        return false;
+    }
 
+    public Rental checkNextRental(Title title){
+        System.out.println("checkingNextRental \n");
+        Rental rental = new Rental();
+        return rental;
+    }
+
+    public boolean generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
+        System.out.println("generateRental \n");
+        return false;
+    }
+
+    public Rental[] viewRentals(Lender lender){
+        System.out.println("viewRentals \n");
+        Rental[] rentals;
+        rentals = new Rental[2];
+        return rentals;
+    }
+
+    public boolean returnCopy(Rental rental){
+        System.out.println("returnCopy \n");
+        return false;
+    }
+
+    public Reservation checkThroughReservations(Rental rental){
+        System.out.println("checkThroughReservations \n");
+        Reservation reservation = new Reservation();
+        return reservation;
+    }
+    
 }
