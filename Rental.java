@@ -27,6 +27,7 @@ public class Rental {
         return this.reservedOn;
     }
 
+
     public Lender getLender() {
         return this.lender;
     }
