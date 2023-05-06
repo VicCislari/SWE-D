@@ -1,22 +1,28 @@
 import java.time.LocalDate;
-import Copy.Copy;
-import Title.Title;
-import Lender.Lender;
-import Reservation.Reservation;
-import Reservation.Rental;
+import java.util.*;
+
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
 
 public class LibSoft {
-    private static ReservationManagement reservationManagement = new ReservationManagement();
-
+    
     public static void main(String[] args){
+
+        //Attributes
+        ReservationManagement reservationManagement = new ReservationManagement();
+        LenderManagement lenderManagement = new LenderManagement();
+        InventoryManagement inventoryManagement = new InventoryManagement();
+        TitleManagement titleManagement = new TitleManagement();
+    
         System.out.println("testing LibSoft");
         Reservation reservation = new Reservation();
         
         LocalDate returnDate =  LocalDate.of(2020, 1, 8);
         LocalDate rentalDate =  LocalDate.of(2021, 1, 8);
 
-        reservationManagement.checkThroughReservations(rental);//what does this function do again...?
-        
         lenderManagement.createLender(
             "Dima", 
             "1234", 
@@ -53,5 +59,8 @@ public class LibSoft {
         while (it.hasNext()) {
             System.out.println(it.next().toString());
         }
+
+        //reservationManagement.checkThroughReservations(rental);//what does this function do again...?
+        
     }
 }

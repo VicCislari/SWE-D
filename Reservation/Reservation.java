@@ -2,8 +2,9 @@ package Reservation;
 import java.time.LocalDate;
 
 import Title.Title;
+import Lender.Lender;
 
-class Reservation{
+public class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;
     private Rental rental;

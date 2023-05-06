@@ -1,9 +1,11 @@
 package Reservation;
 import java.time.LocalDate;
 import Inventory.Copy;
+import Lender.Lender;
 import Title.Title;
+import Lender.Lender;
 
-class ReservationManagement {
+public class ReservationManagement {
     private Rental[] rentals;
     private Reservation[] reservations;
 
