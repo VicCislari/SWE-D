@@ -13,7 +13,6 @@ public class ReservationManagement {
     private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
     public ReservationManagement() {
-        System.out.println("created Reservationmanagement \n");
     }
 
     public ArrayList<Rental> getRentals() {
@@ -47,20 +46,42 @@ public class ReservationManagement {
         return false;
     }
 
+/*
     public Rental checkNextRental(Title title){
         System.out.println("checkingNextRental \n");
         Rental rental = new Rental();
         return rental;
     }
+*/
 
-    public boolean generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
-        System.out.println("generateRental \n");
-        return false;
+    public Rental generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
+        Rental rental = new Rental(lender, copy, rentalDate, returnDate);
+        addRental(rental);
+        return rental;
     }
 
-    public ArrayList<Rental> viewRentals(Lender lender){
+    private void addRental(Rental rental) {
+        rentals.add(rental);
+    }
+
+    //TODO
+    public void viewRentalsofLender(Lender lender){
         System.out.println("viewRentals \n");
-        return rentals;
+        for(int i =0; i<rentals.size();i++){
+            System.out.println(rentals.get(i).getLender().getFullname() + "\n");
+        }
+    }
+
+    public void viewRentals(){
+        System.out.println("viewRentals \n");
+        for(int i =0; i<rentals.size();i++)
+            System.out.println(rentals.get(i).getLender().getFullname() + "\n");
+    }
+
+    public void viewReservations(){
+        System.out.println("viewReservations \n");
+        for(int i =0; i<reservations.size();i++)
+            System.out.println(reservations.get(i).getLender().getFullname() + "\n");
     }
 
     public boolean returnCopy(Rental rental){
@@ -68,9 +89,17 @@ public class ReservationManagement {
         return false;
     }
 
-    public Reservation checkThroughReservations(Rental rental){
+    public boolean checkThroughReservations(Rental rental){
         System.out.println("checkThroughReservations \n");
-        Reservation reservation = new Reservation();
+        //Reservation reservation = new Reservation();
+        //TODO: here I must checkthrough the resevations and alert the system that today the following reservations have reached the awaitedPickupDate
+        return false;
+    }
+
+    public Reservation generateReservation(Title title, Lender lender, LocalDate awaitedPickUp){
+        Reservation reservation = new Reservation(awaitedPickUp, lender, title);
+        reservations.add(reservation);
+        System.out.println("reservations_size: " + reservations.size());
         return reservation;
     }
 

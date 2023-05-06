@@ -2,11 +2,8 @@
 package Inventory;
 
 import java.util.ArrayList;
-import java.util.*;
-import Inventory.*;
+
 import Title.*;
-import Lender.*;
-import Reservation.*;
 
 //done
 public class InventoryManagement {
@@ -26,15 +23,22 @@ public class InventoryManagement {
         Copy copy = new Copy("1", "1", false, title);
         addCopy(copy);
     }
-    
+    public void returnCopy(Copy copy){
+        copy.setRented(false);
+        addCopy(copy);
+    }
+
     private void addCopy(Copy newCopy) {
         //kann man auch als returnCopy sehen
         newCopy.setRented(false); //weil wieder in Inventory
         copies.add(newCopy);
     }
 
-    public Copy reserveCopy(Title title){
+    public Copy rentCopy(Title title){
         Copy copy_to_return;
+
+        System.out.println("copy_size:"+copies.size());
+        viewAllCopies();
         for (int i=0; i< copies.size(); i++){
             if (copies.get(i).getTitle() == title) {
                 copy_to_return = copies.get(i);
@@ -44,6 +48,13 @@ public class InventoryManagement {
             }
         }
         return null;
+    }
+
+    public void viewAllCopies(){
+        System.out.println("printing out copies \n");
+        for(int i =0; i<copies.size();i++){
+            System.out.println(copies.get(i).getTitle().getTitle() + "\n");
+        }
     }
     
 }

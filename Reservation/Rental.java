@@ -12,13 +12,20 @@ public class Rental {
     
     private LocalDate rentalDate;
     private LocalDate returnDate;
-    private LocalDate reservedOn;
     private Lender lender;
-    private Copy copy;  
+    private Copy copy;
+
+    public Rental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate) {
+        this.rentalDate = rentalDate;
+        this.returnDate = returnDate;
+        this.lender = lender;
+        this.copy = copy;
+    }
 
     public LocalDate GetRentalDate(){
         return this.rentalDate;
     }
+
     public void SetRentalDate (LocalDate rentalDate){
             this.rentalDate = rentalDate;
     }
@@ -30,11 +37,6 @@ public class Rental {
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
-
-       public LocalDate GetReservedOn() {
-        return this.reservedOn;
-    }
-
 
     public Lender getLender() {
         return this.lender;

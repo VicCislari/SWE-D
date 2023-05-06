@@ -79,10 +79,6 @@ public class Lender {
     }
     */
 
-   /*  public boolean deleteAccount(Lender lender){
-        lenderManagement.deleteAccount(lender);
-        return false;
-    } */
     
     /* // we have returnCopy in ReservationManagement but no reserveCopy
     public boolean reserveCopy(Title title){
@@ -94,9 +90,5 @@ public class Lender {
     
     // commented so that it can compile on my machine, remove comments once
     // the rest of the system is ready
-    
-    /* public ArrayList<Rental> viewMyRentals(){
-        return reservationManagement.viewRentals(this);
-    } */
     
 }
