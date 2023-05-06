@@ -15,16 +15,11 @@ public class TitleManagement {
     //private Title[] titles;
     private ArrayList<Title> titles = new ArrayList<Title>();
     
-    // Methods
-    public TitleManagement() {
-        this.titles = new Title[0];
-    }
-
-    public Title[] getTitles() {
+    public ArrayList<Title> getTitles() {
         return this.titles;
     }
 
-    public void setTitles(Title[] titles) {
+    public void setTitles(ArrayList<Title> titles) {
         this.titles = titles;
     }
 
