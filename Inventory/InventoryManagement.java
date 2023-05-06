@@ -8,6 +8,7 @@ import Title.*;
 import Lender.*;
 import Reservation.*;
 
+//done
 public class InventoryManagement {
     
     //private Copy[] copies;

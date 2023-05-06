@@ -6,15 +6,23 @@ import Lender.*;
 import Reservation.*;
 import java.util.*;
 
+//done
+
 public class LenderManagement {
     private ArrayList<Lender> lenders;
     
+    public ArrayList<Lender> getLenders() {
+        return lenders;
+    }
+    public void setLenders(ArrayList<Lender> lenders) {
+        this.lenders = lenders;
+    }
+
     public LenderManagement() {
         this.lenders = new ArrayList<Lender>();
     }
 
-    public void createLender(String fullname, String password, String lenderId, 
-    String address, String phoneNumber)
+    public void createLender(String fullname, String password, String lenderId, String address, String phoneNumber)
     {
         lenders.add(
             new Lender(fullname, password, lenderId, address, phoneNumber));
@@ -43,10 +51,6 @@ public class LenderManagement {
     // prospective login system
     public boolean login(String lenderId, String password) { 
         return false;
-    }
-    
-    public ArrayList<Lender> getLenders() {
-        return lenders;
     }
     
 }
