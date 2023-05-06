@@ -6,10 +6,14 @@ import Lender.*;
 import Reservation.*;
 import java.time.LocalDate;
 
+//here
+import java.util.ArrayList;
+
 public class TitleManagement {
     
     // Attributes
-    private Title[] titles;
+    //private Title[] titles;
+    private ArrayList<Title> titles = new ArrayList<Title>();
     
     // Methods
     public TitleManagement() {
