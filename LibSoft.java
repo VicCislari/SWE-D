@@ -61,7 +61,9 @@ public class LibSoft {
         }
         
         String[] authors1 = { "author1", "author2", "author3" };
-        titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
+        String[] authors2 = { "author2", "author3", "author4" };
+        titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8)); //funktioniert
+        titleManagement.createTitle("title2", "ISBN2", "publisher2", authors2, LocalDate.of(2021, 1, 8)); //funktioniert
 
         /* titleManagement.modifyTitle();
         titleManagement.addTitle();

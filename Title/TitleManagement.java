@@ -33,6 +33,9 @@ public class TitleManagement {
         Title titleToModify = findTitleByISBN(isbn);
     }
 
+    /*
+    Comment : Victor
+    why do we need addTitle, if we can just throw the same code into createTitle? */
     private void addTitle(Title newTitle) {
         Title[] newTitles = new Title[titles.length + 1];
         for (int i = 0; i < titles.length; i++) {
