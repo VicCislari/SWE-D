@@ -72,6 +72,7 @@ public class Lender {
 
     // this should probably be removed as LenderManagement handles the 
     // Lender objects
+    //to be removed
     /* public boolean deleteAccount(String lenderID){
         LenderManagement->deleteAccount(lenderID);
         return false;
@@ -83,7 +84,7 @@ public class Lender {
     } */
     
     // we have returnCopy in ReservationManagement but no reserveCopy
-    public boolean reserveCopy(){
+    public boolean reserveCopy(Title title){
         return false;
     }
     
