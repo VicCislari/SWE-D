@@ -50,7 +50,7 @@ class Rental{
   private LocalDateTime return_date;
   private LocalDateTime reserved_on;
 }
-
+/*
 class Lender{
 
   private String fullname;
@@ -76,7 +76,7 @@ class Lender{
   }
 
 }
-
+*/
 class Reservation{
   private LocalDateTime awaited_pick_up;
 
