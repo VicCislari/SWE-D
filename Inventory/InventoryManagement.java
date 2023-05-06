@@ -28,6 +28,22 @@ public class InventoryManagement {
     }
     
     private void addCopy(Copy newCopy) {
+        //kann man auch als returnCopy sehen
+        newCopy.setRented(false); //weil wieder in Inventory
         copies.add(newCopy);
     }
+
+    public Copy reserveCopy(Title title){
+        Copy copy_to_return;
+        for (int i=0; i< copies.size(); i++){
+            if (copies.get(i).getTitle() == title) {
+                copy_to_return = copies.get(i);
+                copy_to_return.setRented(true);
+                copies.remove(i);
+                return copy_to_return;
+            }
+        }
+        return null;
+    }
+    
 }

@@ -32,6 +32,15 @@ public class ReservationManagement {
         this.reservations = reservations;
     }
 
+    /* public boolean reserveCopy(Lender lender, Title title, InventoryManagement inventoryManagement, TitleManagement titleManagement){
+        //todo check if title exists
+        if(titleManagement.findTitleByISBN(title.getISBN()) != null){
+            //todo: check if copies available
+            if()
+        }
+        return false;
+    } */
+
     //the user wants a title which is not in store
     private boolean generateReservation(Lender lender, Rental rental){
         System.out.println("generating Reservation \n");
