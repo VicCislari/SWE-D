@@ -74,7 +74,10 @@ public class LibSoft {
 
         //reservationManagement.checkThroughReservations(rental);//what does this function do again...?
 
-        inventoryManagement.createCopy(title1);
+        /* 
+        done: 
+        inventoryManagement.createCopy(title1); 
+        */
         
     }
 }

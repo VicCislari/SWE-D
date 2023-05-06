@@ -49,10 +49,9 @@ public class ReservationManagement {
         return false;
     }
 
-    public Rental[] viewRentals(Lender lender){
+    public ArrayList<Rental> viewRentals(Lender lender){
         System.out.println("viewRentals \n");
-        Rental[] rentals;
-        rentals = new Rental[2];
+        
         return rentals;
     }
 

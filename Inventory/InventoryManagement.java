@@ -27,7 +27,7 @@ public class InventoryManagement {
     }
     
     private void addCopy(Copy newCopy) {
-        copies.add(newCopy);
+        copies. add(newCopy);
         /* return;
       Copy[] newCopies = new Copy[copies.length + 1];
         for (int i = 0; i < copies.length; i++) {
