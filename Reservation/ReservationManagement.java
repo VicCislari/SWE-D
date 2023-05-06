@@ -1,9 +1,7 @@
 package Reservation;
-//importing the packages
 import Inventory.*;
 import Title.*;
 import Lender.*;
-import Reservation.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -33,7 +31,8 @@ public class ReservationManagement {
         this.reservations = reservations;
     }
 
-    public boolean generateReservation(Lender lender, Rental rental){
+    //the user wants a title which is not in store
+    private boolean generateReservation(Lender lender, Rental rental){
         System.out.println("generating Reservation \n");
         return false;
     }
@@ -51,7 +50,6 @@ public class ReservationManagement {
 
     public ArrayList<Rental> viewRentals(Lender lender){
         System.out.println("viewRentals \n");
-        
         return rentals;
     }
 

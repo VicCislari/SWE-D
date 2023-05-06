@@ -5,8 +5,7 @@ import Title.*;
 import Lender.*;
 import Reservation.*;
 import java.util.*;
-
-//done
+import java.util.ArrayList;
 
 public class LenderManagement {
     private ArrayList<Lender> lenders;
@@ -22,10 +21,11 @@ public class LenderManagement {
         this.lenders = new ArrayList<Lender>();
     }
 
-    public void createLender(String fullname, String password, String lenderId, String address, String phoneNumber)
+    public Lender createLender(String fullname, String password, String lenderId, String address, String phoneNumber)
     {
-        lenders.add(
-            new Lender(fullname, password, lenderId, address, phoneNumber));
+        Lender lender = new Lender(fullname, password, lenderId, address, phoneNumber);
+        lenders.add(lender);
+        return lender;
     }
     
     public Lender searchLender(String lenderId) {
@@ -39,13 +39,26 @@ public class LenderManagement {
         return null;
     }
   
-    public void deleteLender(String lenderId) {
+    public boolean deleteLender(String lenderId) {
         Iterator<Lender> it = lenders.iterator();
         while (it.hasNext()) {
             if (it.next().getLenderId().equals(lenderId)) {
                 it.remove();
+                return true;
             }
         }
+        return false;
+    }
+
+    public boolean deleteLender(Lender lender) {
+        Iterator<Lender> it = lenders.iterator();
+        while (it.hasNext()) {
+            if (it.next().equals(lender)) {
+                it.remove();
+                return true;
+            }
+        }
+        return false;
     }
   
     // prospective login system
