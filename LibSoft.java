@@ -1,7 +1,9 @@
 import java.time.LocalDate;
-
 import Copy.Copy;
 import Title.Title;
+import Lender.Lender;
+import Reservation.Reservation;
+
 
 public class LibSoft {
     private static ReservationManagement reservationManagement = new ReservationManagement();
