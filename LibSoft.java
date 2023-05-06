@@ -18,13 +18,13 @@ import Reservation.*;
  * TitleManagement.{createTitle(Strings), findTitleISBN(string)}
  * ReservationManagement.{constructor, }
  * 
- * TODO:
+ * Done:
  * lender.reserveCopy() -- will be deleted.
  * Titlemanagement.modifyTitle(isbn, commands) -- hier muss der Dima implementieren.
  * the function viewMyRentals() from Lender will be moved to LenderManagement.
  * ReservationManagement.{returnCopy(), reserveCopy()}.
- * TODO: create a Reservation and store it in Reservations in ReservationsManagement
- * TODO: create a Rental additionally and store it in Rentals in ReservationManagement
+ * create a Reservation and store it in Reservations in ReservationsManagement
+ * create a Rental additionally and store it in Rentals in ReservationManagement
  *
  * 
  * 
@@ -109,24 +109,20 @@ public class LibSoft {
         Title title2 = titleManagement.createTitle("title2", "ISBN2", "publisher2",authors2, LocalDate.of(2021, 1, 8)); //funktioniert
 
         inventoryManagement.createCopy(title1);
-        inventoryManagement.createCopy(title1);
         inventoryManagement.createCopy(title2);
 
-        lenderWantsReservation(title1, lender1);
-        lenderWantsReservation(title1, lender1);
-        lenderWantsReservation(title1, lender1);
-        lenderWantsReservation(title1, lender1);
+        ReturnObject returnObject = lenderWantsReservation(title1, lender1);
+        lenderWantsReservation(title2, lender2);
+
         System.out.println("-------------------------");
         System.out.println("showing all copies 1 \n");
         inventoryManagement.viewAllCopies();
-        lenderWantsReservation(title1, lender2);
-        System.out.println("-------------------------");
-        System.out.println("showing all copies 2 \n");
-        inventoryManagement.viewAllCopies();
-        System.out.println("-------------------------");
-        System.out.println("returning: "+reservationManagement.getRentals().get(0).getCopy().getTitle().getTitle() + "\n");
-        reservationManagement.returnCopy(reservationManagement.getRentals().get(0));
-        //TODO: inventoryManagement.returnCopy(copy);
+
+        //returning copy od title 1 lender 1 -- this is how you return copies
+        reservationManagement.returnCopy(returnObject.getRental()); //should work
+        inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
+
+        //some monitoring
         reservationManagement.viewRentals();
         System.out.println("showing all copies 3 \n");
         inventoryManagement.viewAllCopies();
@@ -201,21 +197,24 @@ public class LibSoft {
          */
     }
 
-    private static void lenderWantsReservation(Title title, Lender lender){
+    private static ReturnObject lenderWantsReservation(Title title, Lender lender){
         ReturnObject returnObject = new ReturnObject();
         //DONE: reserve 1 copy for lender 1
         Copy reserved = inventoryManagement.rentCopy(title);
-
         if (reserved!=null){
             System.out.println("copy available");
+            returnObject.setRentalSet(true);
             returnObject.setRental(reservationManagement.generateRental(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
         }else {
             System.out.println("no copy available");
+            returnObject.setReservationSet(true);
             returnObject.setReservation(reservationManagement.generateReservation(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
         }
         reservationManagement.viewRentals();
         System.out.println("\n");
         reservationManagement.viewReservations();
         System.out.println("-----------------------------");
+
+        return returnObject;
     }
 }

@@ -23,6 +23,7 @@ public class InventoryManagement {
         Copy copy = new Copy("1", "1", false, title);
         addCopy(copy);
     }
+
     public void returnCopy(Copy copy){
         copy.setRented(false);
         addCopy(copy);

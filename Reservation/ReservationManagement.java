@@ -40,19 +40,10 @@ public class ReservationManagement {
         return false;
     } */
 
-    //the user wants a title which is not in store
-    private boolean generateReservation(Lender lender, Rental rental){
-        System.out.println("generating Reservation \n");
-        return false;
-    }
-
-/*
-    public Rental checkNextRental(Title title){
+    public void checkNextRental(Title title){
+        //an intelligent way to search
         System.out.println("checkingNextRental \n");
-        Rental rental = new Rental();
-        return rental;
     }
-*/
 
     public Rental generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
         Rental rental = new Rental(lender, copy, rentalDate, returnDate);
@@ -84,15 +75,21 @@ public class ReservationManagement {
             System.out.println(reservations.get(i).getLender().getFullname() + "\n");
     }
 
-    public boolean returnCopy(Rental rental){
-        System.out.println("returnCopy \n");
-        return false;
+    public void returnCopy(Rental rental){
+        System.out.println("returning Copy: \n");
+        //delete from rentals.
+        for (int i=0; i< rentals.size(); i++) {
+            if (rentals.get(i) == rental) {
+                rentals.remove(i);
+                break;
+            }
+        }
     }
 
     public boolean checkThroughReservations(Rental rental){
         System.out.println("checkThroughReservations \n");
         //Reservation reservation = new Reservation();
-        //TODO: here I must checkthrough the resevations and alert the system that today the following reservations have reached the awaitedPickupDate
+        //TODO: here I must check through the resevations and alert the system that today the following reservations have reached the awaitedPickupDate
         return false;
     }
 
