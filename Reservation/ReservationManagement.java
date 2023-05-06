@@ -5,29 +5,31 @@ import Title.*;
 import Lender.*;
 import Reservation.*;
 import java.time.LocalDate;
-
+import java.util.ArrayList;
 
 public class ReservationManagement {
-    private Rental[] rentals;
-    private Reservation[] reservations;
+    //private Rental[] rentals;
+    private ArrayList<Rental> rentals = new ArrayList<Rental>();
+    //private Reservation[] reservations;
+    private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
     public ReservationManagement() {
         System.out.println("created Reservationmanagement \n");
     }
 
-    public Rental[] getRentals() {
+    public ArrayList<Rental> getRentals() {
         return this.rentals;
     }
 
-    public void setRentals(Rental[] rentals) {
+    public void setRentals(ArrayList<Rental> rentals) {
         this.rentals = rentals;
     }
 
-    public Reservation[] getReservations() {
+    public ArrayList<Reservation> getReservations() {
         return this.reservations;
     }
 
-    public void setReservations(Reservation[] reservations) {
+    public void setReservations(ArrayList<Reservation> reservations) {
         this.reservations = reservations;
     }
 
