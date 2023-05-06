@@ -29,8 +29,11 @@ public class TitleManagement {
         addTitle(newTitle);
     }
 
-    public void modifyTitle(String isbn, String commands) {
+    /* Author: Victor-Ion Cislari */
+    public Title modifyTitle(String isbn, String commands) {
         Title titleToModify = findTitleByISBN(isbn);
+        //todo: change 
+        return titleToModify;
     }
 
     /*
