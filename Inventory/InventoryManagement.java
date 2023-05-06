@@ -2,7 +2,7 @@
 package Inventory;
 
 import java.util.ArrayList;
-
+import java.util.*;
 import Inventory.*;
 import Title.*;
 import Lender.*;
