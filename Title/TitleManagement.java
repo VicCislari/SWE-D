@@ -30,7 +30,9 @@ public class TitleManagement {
         return newTitle;
     }
 
-    /* Author: Victor-Ion Cislari */
+    /* Author: Victor-Ion Cislari 
+     * TODO: make this function work
+    */
     public Title modifyTitle(String isbn, String commands) {
         Title titleToModify = findTitleByISBN(isbn);
         //todo: change 
@@ -50,7 +52,7 @@ public class TitleManagement {
         titles = newTitles; */
     }
 
-    private Title findTitleByISBN(String isbn) {
+    public Title findTitleByISBN(String isbn) {
         for (Title title : titles) {
             if (title.getISBN().equals(isbn)) {
                 return title;
@@ -58,4 +60,14 @@ public class TitleManagement {
         }
         return null;
     }
+/* 
+could be interesting.
+    public Title findTitle(Title title) {
+        for (Title title : titles) {
+            if (title.getISBN().equals(isbn)) {
+                return title;
+            }
+        }
+        return null;
+    } */
 }

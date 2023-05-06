@@ -11,7 +11,19 @@ import java.util.ArrayList;
 /* 
  * functions which work
  * Lender.{search, construct}
- * to test:lender.reserveCopy()
+ * Copy.{cosntruct}
+ * Title{construct}
+ * Rental.{}
+ * Reservation.{cosntruct}
+ * 
+ * InventoryManagement.{reserveCopy(title1), createCopy(title), addCopy(copy)}
+ * TitleManagement.{createTitle(Strings), findTitleISBN(string)}
+ * 
+ * TODO:
+ * lender.reserveCopy() -- will be deleted.
+ * Titlemanagement.modifyTitle(isbn, commands) -- hier muss der Dima implementieren.
+ * 
+ * 
  */
 public class LibSoft {
 
@@ -51,27 +63,33 @@ public class LibSoft {
                 "Any-address-straße",
                 "+49 6574839190");
 
-                String[] authors1 = { "author1", "author2", "author3" };
-          
-        Title title1 = titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8)); 
-        boolean reserve = lender3.reserveCopy(title1);
+        String[] authors1 = { "author1", "author2", "author3" };
 
-        /*  
-        works
-        Lender lender4 = lenderManagement.searchLender("L0001");
-        if (lender4 == null) {
-            System.out.println("Found lender! Fullname: " +
-                    lender4.getFullname());
-        }
+        Title title1 = titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
+        inventoryManagement.createCopy(title1);
+        inventoryManagement.createCopy(title1);
+        inventoryManagement.createCopy(title1);
+        inventoryManagement.createCopy(title1);
+        Copy reserved = inventoryManagement.reserveCopy(title1);
+        System.out.println(reserved.getTitle().getTitle());
 
-        lenderManagement.deleteLender("L0001");
-        Lender lender5 = lenderManagement.searchLender("L0001");
-        if (lender5 != null) {
-            System.out.println("Found lender! Fullname: " +
-                    lender5.getFullname());
-        } else {
-            System.out.println("didn't find lenderID:" + " L0001");
-        } */
+        /*
+         * works
+         * Lender lender4 = lenderManagement.searchLender("L0001");
+         * if (lender4 == null) {
+         * System.out.println("Found lender! Fullname: " +
+         * lender4.getFullname());
+         * }
+         * 
+         * lenderManagement.deleteLender("L0001");
+         * Lender lender5 = lenderManagement.searchLender("L0001");
+         * if (lender5 != null) {
+         * System.out.println("Found lender! Fullname: " +
+         * lender5.getFullname());
+         * } else {
+         * System.out.println("didn't find lenderID:" + " L0001");
+         * }
+         */
 
         /*
          * done works:

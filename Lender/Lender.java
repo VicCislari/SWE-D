@@ -77,18 +77,20 @@ public class Lender {
         LenderManagement->deleteAccount(lenderID);
         return false;
     }
- */
+    */
+
    /*  public boolean deleteAccount(Lender lender){
         lenderManagement.deleteAccount(lender);
         return false;
     } */
     
-    // we have returnCopy in ReservationManagement but no reserveCopy
+    /* // we have returnCopy in ReservationManagement but no reserveCopy
     public boolean reserveCopy(Title title){
-        //check ob titel überhaupt verfügbar.
+        //Deniz: check ob titel überhaupt verfügbar.
+        
         System.out.println();
         return false;
-    }
+    } */
     
     // commented so that it can compile on my machine, remove comments once
     // the rest of the system is ready
