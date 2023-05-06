@@ -1,4 +1,12 @@
+package Title;
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
+import java.util.*;
 import java.time.LocalDate;
+
 public class Title {
     // Attributes
     public String title;
@@ -6,6 +14,7 @@ public class Title {
     private String publisher;
     private LocalDate publicationDate;
     private String[] authors;
+
     // Methods
     public Title(String title, String isbn, String publisher,  String[] authors, LocalDate publicationDate){
         this.title = title;
@@ -14,6 +23,7 @@ public class Title {
         this.authors = authors;
         this.publicationDate = publicationDate;
     }
+
     public String getTitle(){
         return title;
     }

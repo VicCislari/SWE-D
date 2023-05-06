@@ -1,13 +1,23 @@
+package Reservation;
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
 import java.time.LocalDate;
+import java.util.*;
 
-class Reservation{
+
+public class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;
-    private Rental rental;
+    //private Rental rental;
     private Title title;
 
-    public Reservation() {
-        System.out.println("created Reservation \n");
+    public Reservation(LocalDate awaited_pick_up, Lender lender, Title title) {
+        this.awaited_pick_up = awaited_pick_up;
+        this.lender = lender;
+        this.title = title;
     }
 
     public LocalDate getAwaited_pick_up() {
@@ -24,14 +34,6 @@ class Reservation{
 
     public void setLender(Lender lender) {
         this.lender = lender;
-    }
-
-    public Rental getRental() {
-        return this.rental;
-    }
-
-    public void setRental(Rental rental) {
-        this.rental = rental;
     }
 
     public Title getTitle() {

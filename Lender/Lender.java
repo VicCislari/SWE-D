@@ -1,6 +1,19 @@
+package Lender;
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
 import java.util.*;
+import java.util.ArrayList;
 
 public class Lender {
+    private String fullname;
+    private String password;
+    private String lenderId;
+    private String address;
+    private String phoneNumber;
+
     public Lender(String fullname, String password, String lenderId, 
         String address, String phoneNumber) 
     {
@@ -10,25 +23,6 @@ public class Lender {
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
-    
-    // this should probably be removed as LenderManagement handles the 
-    // Lender objects
-    public boolean deleteAccount(){
-        return false;
-    }
-    
-    // we have returnCopy in ReservationManagement but no reserveCopy
-    public boolean reserveCopy(){
-        return false;
-    }
-    
-    // commented so that it can compile on my machine, remove comments once
-    // the rest of the system is ready
-    /* 
-    public ArrayList<Rental> viewMyRentals(){
-        return reservationManagement.viewRentals(this);
-    }
-    */
   
     public String getFullname() {
         return fullname;
@@ -75,10 +69,26 @@ public class Lender {
             "\nLender ID: " + lenderId + "\nAddress: " + address + 
             "\nPhone number: " + phoneNumber + '\n';
     }
+
+    // this should probably be removed as LenderManagement handles the 
+    // Lender objects
+    //to be removed
+    /* public boolean deleteAccount(String lenderID){
+        LenderManagement->deleteAccount(lenderID);
+        return false;
+    }
+    */
+
     
-    private String fullname;
-    private String password;
-    private String lenderId;
-    private String address;
-    private String phoneNumber;
+    /* // we have returnCopy in ReservationManagement but no reserveCopy
+    public boolean reserveCopy(Title title){
+        //Deniz: check ob titel überhaupt verfügbar.
+        
+        System.out.println();
+        return false;
+    } */
+    
+    // commented so that it can compile on my machine, remove comments once
+    // the rest of the system is ready
+    
 }
