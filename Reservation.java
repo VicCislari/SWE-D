@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 
+import Title.Title;
+
 class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;

@@ -1,4 +1,7 @@
+package Inventory;
 import java.time.LocalDate;
+
+import Title.Title;
 public class Copy {
     // Attributes
     private String storagePlace;

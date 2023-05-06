@@ -1,10 +1,12 @@
+package Title;
+
 import java.time.LocalDate;
 public class TitleManagement {
     
     // Attributes
     private Title[] titles;
     
-   // Methods
+    // Methods
     public TitleManagement() {
         this.titles = new Title[0];
     }

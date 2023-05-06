@@ -1,5 +1,8 @@
 import java.time.LocalDate;
 
+import Inventory.Copy;
+import Title.Title;
+
 class ReservationManagement {
     private Rental[] rentals;
     private Reservation[] reservations;
