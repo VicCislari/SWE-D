@@ -16,6 +16,14 @@ public class TitleManagement {
         this.titles = new Title[0];
     }
 
+    public Title[] getTitles() {
+        return this.titles;
+    }
+
+    public void setTitles(Title[] titles) {
+        this.titles = titles;
+    }
+
     public void createTitle( String title, String isbn, String publisher, String[] authors, LocalDate publicationDate) {
         Title newTitle = new Title( title,isbn, publisher, authors, publicationDate);
         addTitle(newTitle);

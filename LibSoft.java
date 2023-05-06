@@ -59,6 +59,14 @@ public class LibSoft {
         while (it.hasNext()) {
             System.out.println(it.next().toString());
         }
+        
+        String[] authors1 = { "author1", "author2", "author3" };
+        titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
+
+        /* titleManagement.modifyTitle();
+        titleManagement.addTitle();
+        titleManagement.findTitleByISBN(); */
+
 
         //reservationManagement.checkThroughReservations(rental);//what does this function do again...?
         
