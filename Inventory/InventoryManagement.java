@@ -1,6 +1,8 @@
 //importing the packages
 package Inventory;
 
+import java.util.ArrayList;
+
 import Inventory.*;
 import Title.*;
 import Lender.*;
@@ -8,13 +10,14 @@ import Reservation.*;
 
 public class InventoryManagement {
     
-    private Copy[] copies;
+    //private Copy[] copies;
+    private ArrayList<Copy> copies = new ArrayList<Copy>();
 
-    public Copy[] getCopies() {
+    public ArrayList<Copy> getCopies() {
         return this.copies;
     }
 
-    public void setCopies(Copy[] copies) {
+    public void setCopies(ArrayList<Copy> copies) {
         this.copies = copies;
     }
 
@@ -24,16 +27,13 @@ public class InventoryManagement {
     }
     
     private void addCopy(Copy newCopy) {
-        Copy[] newCopies = new Copy[copies.length + 1];
+        copies.add(newCopy);
+        /* return;
+      Copy[] newCopies = new Copy[copies.length + 1];
         for (int i = 0; i < copies.length; i++) {
             newCopies[i] = copies[i];
         }
         newCopies[copies.length] = newCopy;
-        copies = newCopies;
+        copies = newCopies; */
     }
-
-
-
-
-
 }

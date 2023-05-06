@@ -24,9 +24,10 @@ public class TitleManagement {
         this.titles = titles;
     }
 
-    public void createTitle( String title, String isbn, String publisher, String[] authors, LocalDate publicationDate) {
+    public Title createTitle( String title, String isbn, String publisher, String[] authors, LocalDate publicationDate) {
         Title newTitle = new Title( title,isbn, publisher, authors, publicationDate);
         addTitle(newTitle);
+        return newTitle;
     }
 
     /* Author: Victor-Ion Cislari */
