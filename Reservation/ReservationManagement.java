@@ -1,9 +1,11 @@
 package Reservation;
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
 import java.time.LocalDate;
-import Inventory.Copy;
-import Lender.Lender;
-import Title.Title;
-import Lender.Lender;
+
 
 public class ReservationManagement {
     private Rental[] rentals;

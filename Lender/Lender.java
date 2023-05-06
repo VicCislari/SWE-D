@@ -1,4 +1,9 @@
 package Lender;
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
 
 public class Lender {
     public Lender(String fullname, String password, String lenderId, 

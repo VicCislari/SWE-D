@@ -1,6 +1,11 @@
 package Title;
-
+//importing the packages
+import Inventory.*;
+import Title.*;
+import Lender.*;
+import Reservation.*;
 import java.time.LocalDate;
+
 public class TitleManagement {
     
     // Attributes
