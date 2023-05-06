@@ -1,6 +1,7 @@
 package Reservation;
 import java.time.LocalDate;
 import Inventory.Copy;
+import Lender.Lender;
 
 public class Rental {
     

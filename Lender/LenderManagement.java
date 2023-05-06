@@ -2,8 +2,10 @@ package Lender;
 import java.util.*;
 
 public class LenderManagement {
+    private ArrayList<Lender> lenders;
+    
     public LenderManagement() {
-        lenders = new ArrayList<Lender>();
+        this.lenders = new ArrayList<Lender>();
     }
 
     public void createLender(String fullname, String password, String lenderId, 
@@ -42,5 +44,4 @@ public class LenderManagement {
         return lenders;
     }
     
-    private ArrayList<Lender> lenders;
 }

@@ -1,5 +1,4 @@
 package Lender;
-import java.util.*;
 
 public class Lender {
     public Lender(String fullname, String password, String lenderId, 
