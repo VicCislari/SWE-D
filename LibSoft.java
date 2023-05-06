@@ -53,13 +53,12 @@ public class LibSoft {
 
                 String[] authors1 = { "author1", "author2", "author3" };
           
-          Title title1 = titleManagement.createTitle("title1", "ISBN1", "publisher1",
-          authors1, LocalDate.of(2020, 1, 8)); 
-          
-        lender3.reserveCopy();
-       /*  
-       works
-       Lender lender4 = lenderManagement.searchLender("L0001");
+        Title title1 = titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8)); 
+        boolean reserve = lender3.reserveCopy(title1);
+
+        /*  
+        works
+        Lender lender4 = lenderManagement.searchLender("L0001");
         if (lender4 == null) {
             System.out.println("Found lender! Fullname: " +
                     lender4.getFullname());

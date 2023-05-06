@@ -85,6 +85,8 @@ public class Lender {
     
     // we have returnCopy in ReservationManagement but no reserveCopy
     public boolean reserveCopy(Title title){
+        //check ob titel überhaupt verfügbar.
+        System.out.println();
         return false;
     }
     
