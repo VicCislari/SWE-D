@@ -3,6 +3,7 @@ import Copy.Copy;
 import Title.Title;
 import Lender.Lender;
 import Reservation.Reservation;
+import Reservation.Rental;
 
 
 public class LibSoft {

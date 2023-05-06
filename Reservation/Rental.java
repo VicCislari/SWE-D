@@ -1,5 +1,5 @@
+package Reservation;
 import java.time.LocalDate;
-
 import Inventory.Copy;
 
 public class Rental {
