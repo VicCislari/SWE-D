@@ -1,8 +1,9 @@
 import java.time.LocalDate;
 
+import javax.xml.catalog.Catalog;
+
 //importing the packages
-import Inventory.*;
-import Title.*;
+import Catalogue.*;
 import Lender.*;
 import Reservation.*;
 
@@ -68,11 +69,12 @@ class ReturnObject{
     }
 }
 
-public class LibSoft {
+public class LibraryManagementSystem {
     private static ReservationManagement reservationManagement = new ReservationManagement();
     private static LenderManagement lenderManagement = new LenderManagement();
-    private static InventoryManagement inventoryManagement = new InventoryManagement();
-    private static TitleManagement titleManagement = new TitleManagement();
+    //private static InventoryManagement inventoryManagement = new InventoryManagement();
+    //private static TitleManagement titleManagement = new TitleManagement();
+    private static Catalogue catalogue = new Catalogue();
 
     public static void main(String[] args) {
 
@@ -105,27 +107,34 @@ public class LibSoft {
         String[] authors1 = { "author1", "author2", "author3" };
         String[] authors2 = { "author2", "author3", "author4" };
 
-        Title title1 = titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
-        Title title2 = titleManagement.createTitle("title2", "ISBN2", "publisher2",authors2, LocalDate.of(2021, 1, 8)); //funktioniert
+        //Title title1 = titleManagement.createTitle("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
+        //Title title2 = titleManagement.createTitle("title2", "ISBN2", "publisher2",authors2, LocalDate.of(2021, 1, 8)); //funktioniert
+        catalogue.createBook("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
+        catalogue.createBook("title2", "ISBN2", "publisher2",authors2, LocalDate.of(2021, 1, 8)); //funktioniert
 
-        inventoryManagement.createCopy(title1);
-        inventoryManagement.createCopy(title2);
+        // got lost, TODO: might add later if necessary
+        // inventoryManagement.createCopy(title1);
+        // inventoryManagement.createCopy(title2);
 
-        ReturnObject returnObject = lenderWantsReservation(title1, lender1);
-        lenderWantsReservation(title2, lender2);
+        ReturnObject returnObject = lenderWantsReservation(catalogue.searchBook("title1"), lender1);
+        lenderWantsReservation(catalogue.searchBook("title2"), lender2);
 
         System.out.println("-------------------------");
         System.out.println("showing all copies 1 \n");
-        inventoryManagement.viewAllCopies();
+        // TODO: add later if necessary
+        //inventoryManagement.viewAllCopies();
 
         //returning copy od title 1 lender 1 -- this is how you return copies
         reservationManagement.returnCopy(returnObject.getRental()); //should work
-        inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
+
+        // TODO: add later if necessary
+        // inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
 
         //some monitoring
         reservationManagement.viewRentals();
         System.out.println("showing all copies 3 \n");
-        inventoryManagement.viewAllCopies();
+        // TODO: add later if necessary
+        //inventoryManagement.viewAllCopies();
 
         /*
         inventoryManagement.createCopy(title1);
@@ -200,6 +209,7 @@ public class LibSoft {
     private static ReturnObject lenderWantsReservation(Title title, Lender lender){
         ReturnObject returnObject = new ReturnObject();
         //DONE: reserve 1 copy for lender 1
+        // TODO: add later if necessary
         Copy reserved = inventoryManagement.rentCopy(title);
         if (reserved!=null){
             System.out.println("copy available");
