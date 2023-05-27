@@ -85,5 +85,30 @@ public class Catalogue {
         return (char) (checkDigit + '0');
     }
     
+    public void returnCopy(Copy copy) {
+        copy.setRented(false);
+        books.get(copy.getTitle()).add(copy);
+    }
+
+
+    public Copy rentCopy(Title title) {
+        var copies = books.get(title);
+        if (copies == null) {
+            return null;
+        }
+        if (copies.size() == 0) {
+            return null;
+        }
+        // any copy will do
+        var copy = copies.get(0);
+        copies.remove(0);
+        copy.setRented(true);
+
+        return copy;
+    }
+
+    public ArrayList<Copy> getCopies(Title t) {
+        return books.get(t);
+    }
 
 }

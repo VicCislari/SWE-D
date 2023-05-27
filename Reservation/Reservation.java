@@ -11,7 +11,6 @@ import java.time.LocalDate;
 public class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;
-    //private Rental rental;
     private Title title;
 
     public Reservation(LocalDate awaited_pick_up, Lender lender, Title title) {

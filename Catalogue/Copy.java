@@ -1,6 +1,4 @@
 package Catalogue;
-import java.time.LocalDate;
-import java.util.*;
 
 public class Copy {
     // Attributes

@@ -1,12 +1,10 @@
 package Reservation;
 //importing the packages
-import Inventory.*;
-import Title.*;
+//import Inventory.*;
+//import Title.*;
+import Catalogue.*;
 import Lender.*;
-import Reservation.*;
 import java.time.LocalDate;
-import java.util.*;
-import java.util.ArrayList;
 
 public class Rental {
     

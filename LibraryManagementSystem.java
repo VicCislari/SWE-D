@@ -1,7 +1,5 @@
 import java.time.LocalDate;
 
-import javax.xml.catalog.Catalog;
-
 //importing the packages
 import Catalogue.*;
 import Lender.*;
@@ -15,8 +13,8 @@ import Reservation.*;
  * Rental.{}
  * Reservation.{cosntruct}
  * Lendermanagement.{deleteLender()}
- * InventoryManagement.{reserveCopy(title1), createCopy(title), addCopy(copy)}
- * TitleManagement.{createTitle(Strings), findTitleISBN(string)}
+ * InventoryManagement.{reserveCopy(title1), createCopy(title), addCopy(copy)} (DEPRECATED)
+ * TitleManagement.{createTitle(Strings), findTitleISBN(string)} (DEPRECATED)
  * ReservationManagement.{constructor, }
  * 
  * Done:
@@ -72,8 +70,9 @@ class ReturnObject{
 public class LibraryManagementSystem {
     private static ReservationManagement reservationManagement = new ReservationManagement();
     private static LenderManagement lenderManagement = new LenderManagement();
-    //private static InventoryManagement inventoryManagement = new InventoryManagement();
-    //private static TitleManagement titleManagement = new TitleManagement();
+    // deprecated, replaced by Catalogue
+    // private static InventoryManagement inventoryManagement = new InventoryManagement();
+    // private static TitleManagement titleManagement = new TitleManagement();
     private static Catalogue catalogue = new Catalogue();
 
     public static void main(String[] args) {
@@ -112,29 +111,42 @@ public class LibraryManagementSystem {
         catalogue.createBook("title1", "ISBN1", "publisher1", authors1, LocalDate.of(2020, 1, 8));
         catalogue.createBook("title2", "ISBN2", "publisher2",authors2, LocalDate.of(2021, 1, 8)); //funktioniert
 
-        // got lost, TODO: might add later if necessary
+        // deprecated, replaced by catalogue.addBook()
         // inventoryManagement.createCopy(title1);
         // inventoryManagement.createCopy(title2);
 
-        ReturnObject returnObject = lenderWantsReservation(catalogue.searchBook("title1"), lender1);
-        lenderWantsReservation(catalogue.searchBook("title2"), lender2);
+        catalogue.addBook("ISBN1", "001", false);
+        catalogue.addBook("ISBN1", "002", false);
+        catalogue.addBook("ISBN1", "003", false);
+        catalogue.addBook("ISBN2", "002", false);
 
-        System.out.println("-------------------------");
-        System.out.println("showing all copies 1 \n");
-        // TODO: add later if necessary
-        //inventoryManagement.viewAllCopies();
+        ReturnObject returnObject = lenderWantsReservation(catalogue.searchBook("ISBN1"), lender1);
+        lenderWantsReservation(catalogue.searchBook("ISBN2"), lender2);
 
-        //returning copy od title 1 lender 1 -- this is how you return copies
+        // depracated, replaced by catalogue.getCopies(), scroll down to 
+        // see an example 
+        // inventoryManagement.viewAllCopies();
+
+        //returning copy of title 1 lender 1 -- this is how you return copies
         reservationManagement.returnCopy(returnObject.getRental()); //should work
 
-        // TODO: add later if necessary
+        // deprecated, replaced by catalogue.returnCopy()
         // inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
+        catalogue.returnCopy(returnObject.getRental().getCopy()); // should work
+
 
         //some monitoring
-        reservationManagement.viewRentals();
-        System.out.println("showing all copies 3 \n");
-        // TODO: add later if necessary
-        //inventoryManagement.viewAllCopies();
+        reservationManagement.viewRentals(); 
+        // depracated, replaced by catalogue.getCopies()
+        // inventoryManagement.viewAllCopies();
+        final String ISBN_EXAMPLE = "ISBN1";
+        var copies = catalogue.getCopies(catalogue.searchBook(ISBN_EXAMPLE));
+        System.out.println("All copies of " + ISBN_EXAMPLE + " (" + 
+            copies.size() + "): ");
+        for (var copy: copies) {
+            System.out.println(copy.getTitle().getTitle() + " " + 
+                copy.getCopyID());
+        }
 
         /*
         inventoryManagement.createCopy(title1);
@@ -208,9 +220,10 @@ public class LibraryManagementSystem {
 
     private static ReturnObject lenderWantsReservation(Title title, Lender lender){
         ReturnObject returnObject = new ReturnObject();
-        //DONE: reserve 1 copy for lender 1
-        // TODO: add later if necessary
-        Copy reserved = inventoryManagement.rentCopy(title);
+        // DONE: reserve 1 copy for lender 1
+        // deprecated, replaced by catalogue.rentCopy()
+        // Copy reserved = inventoryManagement.rentCopy(title);
+        Copy reserved = catalogue.rentCopy(title);
         if (reserved!=null){
             System.out.println("copy available");
             returnObject.setRentalSet(true);
