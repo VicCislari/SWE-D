@@ -1,10 +1,10 @@
 package Reservation;
-import Inventory.*;
-import Title.*;
+//import Inventory.*;
+//import Title.*;
+import Catalogue.*;
 import Lender.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.*;
 
 public class ReservationManagement {
     //private Rental[] rentals;
@@ -66,13 +66,13 @@ public class ReservationManagement {
     public void viewRentals(){
         System.out.println("viewRentals \n");
         for(int i =0; i<rentals.size();i++)
-            System.out.println(rentals.get(i).getLender().getFullname() + "\n");
+            System.out.println(rentals.get(i).getLender().getFullname());
     }
 
     public void viewReservations(){
         System.out.println("viewReservations \n");
         for(int i =0; i<reservations.size();i++)
-            System.out.println(reservations.get(i).getLender().getFullname() + "\n");
+            System.out.println(reservations.get(i).getLender().getFullname());
     }
 
     public void returnCopy(Rental rental){

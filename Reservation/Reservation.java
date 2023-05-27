@@ -1,17 +1,16 @@
 package Reservation;
 //importing the packages
-import Inventory.*;
-import Title.*;
+//import Inventory.*;
+
+//import Title.*;
+import Catalogue.*;
 import Lender.*;
-import Reservation.*;
 import java.time.LocalDate;
-import java.util.*;
 
 
 public class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;
-    //private Rental rental;
     private Title title;
 
     public Reservation(LocalDate awaited_pick_up, Lender lender, Title title) {
