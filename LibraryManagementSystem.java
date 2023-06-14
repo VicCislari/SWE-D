@@ -68,7 +68,7 @@ class ReturnObject{
 }
 
 public class LibraryManagementSystem {
-    private static ReservationManagement reservationManagement = new ReservationManagement();
+    private static RentalManagement rentalManagement = new RentalManagement();
     private static LenderManagement lenderManagement = new LenderManagement();
     // deprecated, replaced by Catalogue
     // private static InventoryManagement inventoryManagement = new InventoryManagement();
@@ -128,7 +128,7 @@ public class LibraryManagementSystem {
         // inventoryManagement.viewAllCopies();
 
         //returning copy of title 1 lender 1 -- this is how you return copies
-        reservationManagement.returnCopy(returnObject.getRental()); //should work
+        rentalManagement.returnCopy(returnObject.getRental()); //should work
 
         // deprecated, replaced by catalogue.returnCopy()
         // inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
@@ -136,7 +136,7 @@ public class LibraryManagementSystem {
 
 
         //some monitoring
-        reservationManagement.viewRentals(); 
+        rentalManagement.viewRentals();
         // depracated, replaced by catalogue.getCopies()
         // inventoryManagement.viewAllCopies();
         final String ISBN_EXAMPLE = "ISBN1";
@@ -227,15 +227,15 @@ public class LibraryManagementSystem {
         if (reserved!=null){
             System.out.println("copy available");
             returnObject.setRentalSet(true);
-            returnObject.setRental(reservationManagement.generateRental(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
+            returnObject.setRental(rentalManagement.generateRental(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
         }else {
             System.out.println("no copy available");
             returnObject.setReservationSet(true);
-            returnObject.setReservation(reservationManagement.generateReservation(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
+            returnObject.setReservation(rentalManagement.generateReservation(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
         }
-        reservationManagement.viewRentals();
+        rentalManagement.viewRentals();
         System.out.println("\n");
-        reservationManagement.viewReservations();
+        rentalManagement.viewReservations();
         System.out.println("-----------------------------");
 
         return returnObject;
