@@ -54,4 +54,13 @@ public class Title {
     public void setAuthors(String[] authors) {
         this.authors = authors; 
     }
+    public String gnerateBibTex(){
+        //this generates a file.. but what file?
+        //or thriow exception if something went wrong...
+        return "hello thisis some text";
+    }
+    public void modifyTitle(){
+        //this generates a file.. but what file?
+        //
+    }
 }
