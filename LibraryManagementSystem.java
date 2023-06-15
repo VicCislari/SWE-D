@@ -148,6 +148,13 @@ public class LibraryManagementSystem {
                 copy.getCopyID());
         }
 
+        // BibTex test
+        try {
+            catalogue.searchBook("ISBN1").generateBibTex("title1");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         /*
         inventoryManagement.createCopy(title1);
 
