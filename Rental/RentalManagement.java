@@ -1,4 +1,4 @@
-package Reservation;
+package Rental;
 //import Inventory.*;
 //import Title.*;
 import Catalogue.*;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class RentalManagement {
     //private Rental[] rentals;
     private ArrayList<Rental> rentals = new ArrayList<Rental>();
-    //private Reservation[] reservations;
+    //private Rental[] reservations;
     private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
     public RentalManagement() {
@@ -88,7 +88,7 @@ public class RentalManagement {
 
     public boolean checkThroughReservations(Rental rental){
         System.out.println("checkThroughReservations \n");
-        //Reservation reservation = new Reservation();
+        //Rental reservation = new Rental();
         //TODO: here I must check through the resevations and alert the system that today the following reservations have reached the awaitedPickupDate
         return false;
     }

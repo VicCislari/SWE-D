@@ -1,11 +1,5 @@
 package Lender;
 //importing the packages
-import Inventory.*;
-import Title.*;
-import Lender.*;
-import Reservation.*;
-import java.util.*;
-import java.util.ArrayList;
 
 public class Lender {
     private String fullname;
@@ -70,11 +64,11 @@ public class Lender {
             "\nPhone number: " + phoneNumber + '\n';
     }
 
-    // this should probably be removed as LenderManagement handles the 
+    // this should probably be removed as UserManagement handles the
     // Lender objects
     //to be removed
     /* public boolean deleteAccount(String lenderID){
-        LenderManagement->deleteAccount(lenderID);
+        UserManagement->deleteAccount(lenderID);
         return false;
     }
     */
