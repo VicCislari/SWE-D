@@ -57,7 +57,7 @@ public class UserManagement {
         return false;
     }
   
-    // TODO: Victor
+    // TODO: Deniz
     public boolean authenticateUser(String lenderId, String password) {
         return false;
     }
