@@ -224,14 +224,14 @@ public class LibraryManagementSystem {
          * userManagement.reserveCopy();
          */
 
-        reservationManagement.generateReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
-        reservationManagement.generateReservation(catalogue.searchBook("ISBN2"), lender2, LocalDate.of(2021, 1, 8));
+        rentalManagement.generateReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
+        rentalManagement.generateReservation(catalogue.searchBook("ISBN2"), lender2, LocalDate.of(2021, 1, 8));
 
-        reservationManagement.viewReservations();
+        rentalManagement.viewReservations();
 
-        reservationManagement.deleteReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
+        rentalManagement.deleteReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
 
-        reservationManagement.viewReservations();
+        rentalManagement.viewReservations();
 
     }
 
