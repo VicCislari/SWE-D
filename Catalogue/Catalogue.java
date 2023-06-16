@@ -26,12 +26,12 @@ public class Catalogue {
         return null;
     }
 
-    public void deleteBook(String ISBN_13) {
-        var book = searchBook(ISBN_13);
-        if (book == null) {
+    public void deleteBook(Title title) {
+        //var book = searchBook(ISBN_13);
+        if (title == null) {
             return;
         }
-        books.remove(book);
+        books.remove(title);
     }
 
     public void addBook(String ISBN_13, String storagePlace, boolean rented) {
