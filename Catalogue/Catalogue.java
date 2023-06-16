@@ -26,12 +26,12 @@ public class Catalogue {
         return null;
     }
 
-    public void deleteBook(String ISBN_13) {
-        var book = searchBook(ISBN_13);
-        if (book == null) {
+    public void deleteBook(Title title) {
+        //var book = searchBook(ISBN_13);
+        if (title == null) {
             return;
         }
-        books.remove(book);
+        books.remove(title);
     }
 
     public void addBook(String ISBN_13, String storagePlace, boolean rented) {
@@ -40,6 +40,7 @@ public class Catalogue {
             return;
         }
         var copies = books.get(t);
+        // are you sure that wqe need to have .get(t).? can't we just do t.? doesn't that reference te exact same object in the memory which is also refered to by our books hashmap?
         int newCopyId = 0;
         for (var copy: copies) {
             if (newCopyId < copy.getCopyID()) {
