@@ -3,7 +3,7 @@ import java.time.LocalDate;
 //importing the packages
 import Catalogue.*;
 import Lender.*;
-import Reservation.*;
+import Rental.*;
 
 /* 
  * functions which work
@@ -11,7 +11,7 @@ import Reservation.*;
  * Copy.{cosntruct}
  * Title{construct}
  * Rental.{}
- * Reservation.{cosntruct}
+ * Rental.{cosntruct}
  * Lendermanagement.{deleteLender()}
  * InventoryManagement.{reserveCopy(title1), createCopy(title), addCopy(copy)} (DEPRECATED)
  * TitleManagement.{createTitle(Strings), findTitleISBN(string)} (DEPRECATED)
@@ -20,9 +20,9 @@ import Reservation.*;
  * Done:
  * lender.reserveCopy() -- will be deleted.
  * Titlemanagement.modifyTitle(isbn, commands) -- hier muss der Dima implementieren.
- * the function viewMyRentals() from Lender will be moved to LenderManagement.
+ * the function viewMyRentals() from Lender will be moved to UserManagement.
  * ReservationManagement.{returnCopy(), reserveCopy()}.
- * create a Reservation and store it in Reservations in ReservationsManagement
+ * create a Rental and store it in Reservations in ReservationsManagement
  * create a Rental additionally and store it in Rentals in ReservationManagement
  *
  * 
@@ -68,8 +68,8 @@ class ReturnObject{
 }
 
 public class LibraryManagementSystem {
-    private static ReservationManagement reservationManagement = new ReservationManagement();
-    private static LenderManagement lenderManagement = new LenderManagement();
+    private static RentalManagement rentalManagement = new RentalManagement();
+    private static UserManagement userManagement = new UserManagement();
     // deprecated, replaced by Catalogue
     // private static InventoryManagement inventoryManagement = new InventoryManagement();
     // private static TitleManagement titleManagement = new TitleManagement();
@@ -82,21 +82,21 @@ public class LibraryManagementSystem {
         LocalDate rentalDate = LocalDate.of(2021, 1, 8);
 
         // should return the lender.
-        Lender lender1 = lenderManagement.createLender(
+        Lender lender1 = userManagement.registerUser(
                 "Dima",
                 "1234",
                 "L0001",
                 "Real-address-straße",
                 "+49 1234567890");
 
-        Lender lender2 = lenderManagement.createLender(
+        Lender lender2 = userManagement.registerUser(
                 "Vova",
                 "4321",
                 "L0002",
                 "Fake-address-straße",
                 "+49 0987654321");
 
-        Lender lender3 = lenderManagement.createLender(
+        Lender lender3 = userManagement.registerUser(
                 "Boris",
                 "9876",
                 "L0003",
@@ -128,7 +128,7 @@ public class LibraryManagementSystem {
         // inventoryManagement.viewAllCopies();
 
         //returning copy of title 1 lender 1 -- this is how you return copies
-        reservationManagement.returnBook(returnObject.getRental()); //should work
+        rentalManagement.returnBook(returnObject.getRental()); //should work
 
         // deprecated, replaced by catalogue.returnCopy()
         // inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
@@ -136,7 +136,7 @@ public class LibraryManagementSystem {
 
 
         //some monitoring
-        reservationManagement.viewRentals(); 
+        rentalManagement.viewRentals();
         // depracated, replaced by catalogue.getCopies()
         // inventoryManagement.viewAllCopies();
         final String ISBN_EXAMPLE = "ISBN1";
@@ -160,7 +160,7 @@ public class LibraryManagementSystem {
 
         //DONE: reserve 1 copy for lender 1
         Copy reserved = inventoryManagement.rentCopy(title1);
-        Reservation reservation;
+        Rental reservation;
         if (reserved!=null){
             Rental rental = reservationManagement.generateRental(lender1, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8));
             System.out.println("copy available");
@@ -170,7 +170,7 @@ public class LibraryManagementSystem {
         }
 
         Copy reserved2 = inventoryManagement.rentCopy(title1);
-        Reservation reservation2;
+        Rental reservation2;
         if (reserved!=null){
             Rental rental2 = reservationManagement.generateRental(lender1, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8));
             System.out.println("copy available");
@@ -183,14 +183,14 @@ public class LibraryManagementSystem {
 
         /*
          * works:
-         * Lender lender4 = lenderManagement.searchLender("L0001");
+         * Lender lender4 = userManagement.searchLender("L0001");
          * if (lender4 == null) {
          * System.out.println("Found lender! Fullname: " +
          * lender4.getFullname());
          * }
          * 
-         * lenderManagement.deleteLender("L0001");
-         * Lender lender5 = lenderManagement.searchLender("L0001");
+         * userManagement.deleteLender("L0001");
+         * Lender lender5 = userManagement.searchLender("L0001");
          * if (lender5 != null) {
          * System.out.println("Found lender! Fullname: " +
          * lender5.getFullname());
@@ -214,14 +214,14 @@ public class LibraryManagementSystem {
         // function do again...?
 
         // reservationManagement.generateReservation();
-        /* lenderManagement.reserveCopy(); */
-        // lenderManagement.deleteAccount();
+        /* userManagement.reserveCopy(); */
+        // userManagement.deleteAccount();
         /*
-         * lenderManagement.();
-         * lenderManagement.reserveCopy();
-         * lenderManagement.reserveCopy();
-         * lenderManagement.reserveCopy();
-         * lenderManagement.reserveCopy();
+         * userManagement.();
+         * userManagement.reserveCopy();
+         * userManagement.reserveCopy();
+         * userManagement.reserveCopy();
+         * userManagement.reserveCopy();
          */
 
         reservationManagement.generateReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
@@ -244,15 +244,15 @@ public class LibraryManagementSystem {
         if (reserved!=null){
             System.out.println("copy available");
             returnObject.setRentalSet(true);
-            returnObject.setRental(reservationManagement.rentBook(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
+            returnObject.setRental(rentalManagement.rentBook(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
         }else {
             System.out.println("no copy available");
             returnObject.setReservationSet(true);
-            returnObject.setReservation(reservationManagement.generateReservation(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
+            returnObject.setReservation(rentalManagement.generateReservation(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
         }
-        reservationManagement.viewRentals();
+        rentalManagement.viewRentals();
         System.out.println("\n");
-        reservationManagement.viewReservations();
+        rentalManagement.viewReservations();
         System.out.println("-----------------------------");
 
         return returnObject;

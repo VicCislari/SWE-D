@@ -3,7 +3,7 @@ package Lender;
 import java.util.*;
 import java.util.ArrayList;
 
-public class LenderManagement {
+public class UserManagement {
     private ArrayList<Lender> lenders;
     
     public ArrayList<Lender> getLenders() {
@@ -13,15 +13,15 @@ public class LenderManagement {
         this.lenders = lenders;
     }
 
-    public LenderManagement() {
+    public UserManagement() {
         this.lenders = new ArrayList<Lender>();
     }
 
-    public Lender createLender(String fullname, String password, String lenderId, String address, String phoneNumber)
+    public Lender registerUser(String fullname, String password, String lenderId, String address, String phoneNumber)
     {
         Lender lender = new Lender(fullname, password, lenderId, address, phoneNumber);
         lenders.add(lender);
-        return lender;
+        return lender; //I guess for future use this function shouldn't return anything, but for current testing we'll keep
     }
     
     public Lender searchLender(String lenderId) {
@@ -35,7 +35,7 @@ public class LenderManagement {
         return null;
     }
   
-    public boolean deleteLender(String lenderId) {
+    public boolean deactivateUser(String lenderId) {
         Iterator<Lender> it = lenders.iterator();
         while (it.hasNext()) {
             if (it.next().getLenderId().equals(lenderId)) {
@@ -46,7 +46,7 @@ public class LenderManagement {
         return false;
     }
 
-    public boolean deleteLender(Lender lender) {
+    public boolean deactivateUser(Lender lender) {
         Iterator<Lender> it = lenders.iterator();
         while (it.hasNext()) {
             if (it.next().equals(lender)) {
@@ -57,8 +57,8 @@ public class LenderManagement {
         return false;
     }
   
-    // prospective login system
-    public boolean login(String lenderId, String password) { 
+    // TODO: Deniz
+    public boolean authenticateUser(String lenderId, String password) {
         return false;
     }
 

@@ -40,6 +40,7 @@ public class Catalogue {
             return;
         }
         var copies = books.get(t);
+        // are you sure that wqe need to have .get(t).? can't we just do t.? doesn't that reference te exact same object in the memory which is also refered to by our books hashmap?
         int newCopyId = 0;
         for (var copy: copies) {
             if (newCopyId < copy.getCopyID()) {
