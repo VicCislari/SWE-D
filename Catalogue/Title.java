@@ -33,10 +33,10 @@ public class Title {
 
         String authorsString = new String();
         for (int i = 0; i < authors.length; ++i) {
-            authorsString += authors[i];
-            if (i < authors.length - 1) {
+            if (i > 0) {
                 authorsString += " and ";
             }
+            authorsString += authors[i];
         }
 
         fw.write("@book{" +
