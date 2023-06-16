@@ -45,7 +45,7 @@ public class ReservationManagement {
         System.out.println("checkingNextRental \n");
     }
 
-    public Rental generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
+    public Rental rentBook(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
         Rental rental = new Rental(lender, copy, rentalDate, returnDate);
         addRental(rental);
         return rental;
@@ -75,8 +75,8 @@ public class ReservationManagement {
             System.out.println(reservations.get(i).getLender().getFullname());
     }
 
-    public void returnCopy(Rental rental){
-        System.out.println("returning Copy: \n");
+    public void returnBook(Rental rental){
+        System.out.println("returning Book: \n");
         //delete from rentals.
         for (int i=0; i< rentals.size(); i++) {
             if (rentals.get(i) == rental) {
@@ -98,6 +98,26 @@ public class ReservationManagement {
         reservations.add(reservation);
         System.out.println("reservations_size: " + reservations.size());
         return reservation;
+    }
+
+    public Reservation searchReservation(Title title, Lender lender, LocalDate awaitedPickUp) {
+        for (int i = 0; i < reservations.size(); ++i) {
+            Reservation r = reservations.get(i);
+            if (r.getTitle().getISBN().equals(title.getISBN()) && 
+                r.getLender().getFullname().equals(lender.getFullname()) &&
+                r.getAwaited_pick_up().isEqual(awaitedPickUp)) {
+                return r;
+            }
+        }
+
+        return null;
+    }
+
+    public void deleteReservation(Title title, Lender lender, LocalDate awaitedPickUp) {
+        Reservation r = searchReservation(title, lender, awaitedPickUp);
+        if (r != null) {
+            reservations.remove(r);
+        }
     }
 
 }

@@ -128,7 +128,7 @@ public class LibraryManagementSystem {
         // inventoryManagement.viewAllCopies();
 
         //returning copy of title 1 lender 1 -- this is how you return copies
-        reservationManagement.returnCopy(returnObject.getRental()); //should work
+        reservationManagement.returnBook(returnObject.getRental()); //should work
 
         // deprecated, replaced by catalogue.returnCopy()
         // inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
@@ -223,6 +223,16 @@ public class LibraryManagementSystem {
          * lenderManagement.reserveCopy();
          * lenderManagement.reserveCopy();
          */
+
+        reservationManagement.generateReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
+        reservationManagement.generateReservation(catalogue.searchBook("ISBN2"), lender2, LocalDate.of(2021, 1, 8));
+
+        reservationManagement.viewReservations();
+
+        reservationManagement.deleteReservation(catalogue.searchBook("ISBN1"), lender1, LocalDate.of(2020, 1, 8));
+
+        reservationManagement.viewReservations();
+
     }
 
     private static ReturnObject lenderWantsReservation(Title title, Lender lender){
@@ -234,7 +244,7 @@ public class LibraryManagementSystem {
         if (reserved!=null){
             System.out.println("copy available");
             returnObject.setRentalSet(true);
-            returnObject.setRental(reservationManagement.generateRental(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
+            returnObject.setRental(reservationManagement.rentBook(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
         }else {
             System.out.println("no copy available");
             returnObject.setReservationSet(true);
