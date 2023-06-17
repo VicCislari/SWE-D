@@ -45,7 +45,7 @@ public class RentalManagement {
         System.out.println("checkingNextRental \n");
     }
 
-    public Rental generateRental(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
+    public Rental rentBook(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
         Rental rental = new Rental(lender, copy, rentalDate, returnDate);
         addRental(rental);
         return rental;
@@ -69,13 +69,27 @@ public class RentalManagement {
             System.out.println(rentals.get(i).getLender().getFullname());
     }
 
+    //TODO:
+    public void viewRentals(Lender lender){
+        System.out.println("viewRentals \n");
+        for(int i =0; i<rentals.size();i++)
+            System.out.println(rentals.get(i).getLender().getFullname());
+    }
+
     public void viewReservations(){
         System.out.println("viewReservations \n");
         for(int i =0; i<reservations.size();i++)
             System.out.println(reservations.get(i).getLender().getFullname());
     }
 
-    public void returnCopy(Rental rental){
+    //TODO:
+    public void viewReservations(Lender lender){
+        System.out.println("viewReservations \n");
+        for(int i =0; i<reservations.size();i++)
+            System.out.println(reservations.get(i).getLender().getFullname());
+    }
+
+    public void returnBook(Rental rental){
         System.out.println("returning Copy: \n");
         //delete from rentals.
         for (int i=0; i< rentals.size(); i++) {
@@ -100,4 +114,77 @@ public class RentalManagement {
         return reservation;
     }
 
+    //TODO:
+    public void extendRental(Rental rental, LocalDate returnDate){
+        System.out.println("extendRental()");
+    }
+
+    //TODO:
+    public boolean deleteReservation(Reservation reservation, Lender lender){
+        System.out.println("deleteReservation");
+        return false;
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

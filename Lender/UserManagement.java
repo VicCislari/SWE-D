@@ -61,7 +61,5 @@ public class UserManagement {
     public boolean authenticateUser(String lenderId, String password) {
         return false;
     }
-
-    
     
 }

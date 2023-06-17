@@ -28,6 +28,7 @@ import Rental.*;
  * 
  * 
  */
+
 class ReturnObject{
     private Rental rental;
     private Reservation reservation;
@@ -128,7 +129,7 @@ public class LibraryManagementSystem {
         // inventoryManagement.viewAllCopies();
 
         //returning copy of title 1 lender 1 -- this is how you return copies
-        rentalManagement.returnCopy(returnObject.getRental()); //should work
+        rentalManagement.returnBook(returnObject.getRental()); //should work
 
         // deprecated, replaced by catalogue.returnCopy()
         // inventoryManagement.returnCopy(returnObject.getRental().getCopy()); //should work.
@@ -227,7 +228,7 @@ public class LibraryManagementSystem {
         if (reserved!=null){
             System.out.println("copy available");
             returnObject.setRentalSet(true);
-            returnObject.setRental(rentalManagement.generateRental(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
+            returnObject.setRental(rentalManagement.rentBook(lender, reserved, LocalDate.of(2020, 1, 8), LocalDate.of(2021, 1, 8)));
         }else {
             System.out.println("no copy available");
             returnObject.setReservationSet(true);

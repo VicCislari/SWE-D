@@ -7,7 +7,6 @@ import Catalogue.*;
 import Lender.*;
 import java.time.LocalDate;
 
-
 public class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;
