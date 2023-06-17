@@ -19,28 +19,22 @@ public class Copy {
     public void setStoragePlace(String storagePlace){
         this.storagePlace = storagePlace;
     }
-     public int getCopyID(){
+    public int getCopyID(){
         return copyID;
     }
     public void setCopyID(int copyID){
         this.copyID = copyID;
     }
-     public boolean isRented(){
+    public boolean isRented(){
         return rented;
     }
     public void setRented(boolean rented){
         this.rented = rented;
     }
-    
     public Title getTitle() {
         return title;
     }
-
     public void setTitle(Title title) {
         this.title = title;
-    }
-    //return the title(name) of the copy
-    public Title getTitleOfCopy() {
-        return this.title;
     }
 }

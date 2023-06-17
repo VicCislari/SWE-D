@@ -71,9 +71,6 @@ class ReturnObject{
 public class LibraryManagementSystem {
     private static RentalManagement rentalManagement = new RentalManagement();
     private static UserManagement userManagement = new UserManagement();
-    // deprecated, replaced by Catalogue
-    // private static InventoryManagement inventoryManagement = new InventoryManagement();
-    // private static TitleManagement titleManagement = new TitleManagement();
     private static Catalogue catalogue = new Catalogue();
 
     public static void main(String[] args) {

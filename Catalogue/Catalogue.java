@@ -67,30 +67,11 @@ public class Catalogue {
         }
         return false;
     }
-
-    public char calculateISBNCheckDigit(String str) {
-        int sum = 0;
-        int multiply = 1;
-    
-        for (int i = 0; i < str.length(); i++) {
-            char digitChar = str.charAt(i);
-    
-            if (Character.isDigit(digitChar)) {
-                int digit = Character.getNumericValue(digitChar);
-                sum += multiply * digit;
-                multiply = (multiply == 1) ? 3 : 1;
-            }
-        }
-    
-        int checkDigit = (10 - (sum % 10)) % 10;
-        return (char) (checkDigit + '0');
-    }
     
     public void returnCopy(Copy copy) {
         copy.setRented(false);
         books.get(copy.getTitle()).add(copy);
     }
-
 
     public Copy rentCopy(Title title) {
         var copies = books.get(title);
@@ -110,6 +91,27 @@ public class Catalogue {
 
     public ArrayList<Copy> getCopies(Title t) {
         return books.get(t);
+    }
+
+
+    //optional functions. Not required by the Prof:
+
+    public char calculateISBNCheckDigit(String str) {
+        int sum = 0;
+        int multiply = 1;
+
+        for (int i = 0; i < str.length(); i++) {
+            char digitChar = str.charAt(i);
+
+            if (Character.isDigit(digitChar)) {
+                int digit = Character.getNumericValue(digitChar);
+                sum += multiply * digit;
+                multiply = (multiply == 1) ? 3 : 1;
+            }
+        }
+
+        int checkDigit = (10 - (sum % 10)) % 10;
+        return (char) (checkDigit + '0');
     }
 
 }
