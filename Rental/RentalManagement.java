@@ -7,13 +7,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class RentalManagement {
+
     //private Rental[] rentals;
     private ArrayList<Rental> rentals = new ArrayList<Rental>();
     //private Rental[] reservations;
     private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
-    public RentalManagement() {
-    }
+    public RentalManagement() {}//useless
 
     public ArrayList<Rental> getRentals() {
         return this.rentals;
@@ -114,18 +114,21 @@ public class RentalManagement {
         return reservation;
     }
 
-    //TODO:
+    //TODO: implement
     public void extendRental(Rental rental, LocalDate returnDate){
         System.out.println("extendRental()");
     }
 
-    //TODO:
+    //TODO: implement
     public boolean deleteReservation(Reservation reservation, Lender lender){
         System.out.println("deleteReservation");
         return false;
     }
 
-
+    public String remindUser(Rental rental){
+        //will only be executed if the rental is close to expiration.
+        return "reminding User to return the copy";
+    }
 
 }
 

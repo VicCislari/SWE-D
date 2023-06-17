@@ -6,6 +6,10 @@ import java.time.LocalDate;
 public class Catalogue {
     private Map<Title, ArrayList<Copy>> books;
 
+    public ArrayList<Copy> getCopies(Title t) {
+        return books.get(t);
+    }
+
     public Catalogue() {
         books = new HashMap<Title, ArrayList<Copy>>();
     }
@@ -26,6 +30,7 @@ public class Catalogue {
         return null;
     }
 
+    //this function is optional
     public void deleteBook(String ISBN_13) {
         var book = searchBook(ISBN_13);
         if (book == null) {
@@ -34,12 +39,12 @@ public class Catalogue {
         books.remove(book);
     }
 
-    public void addBook(String ISBN_13, String storagePlace, boolean rented) {
-        Title t = searchBook(ISBN_13);
-        if (t == null) {
+    //TODO: test
+    public void addBook(Title title, String storagePlace, boolean rented) {
+        if (title == null) {
             return;
         }
-        var copies = books.get(t);
+        var copies = books.get(title);
         // are you sure that wqe need to have .get(t).? can't we just do t.? doesn't that reference te exact same object in the memory which is also refered to by our books hashmap?
         int newCopyId = 0;
         for (var copy: copies) {
@@ -49,23 +54,9 @@ public class Catalogue {
         }
         ++newCopyId;
 
-        Copy c = new Copy(storagePlace, newCopyId, false, t);
+        Copy c = new Copy(storagePlace, newCopyId, false, title);
 
-        books.get(t).add(c);
-    }
-
-    public boolean checkAvailability(String ISBN_13) {
-        var book = searchBook(ISBN_13);
-        if ( book == null) {
-            return false;
-        }
-        var copies = books.get(book);
-        for (var copy: copies) {
-            if (!copy.isRented()) {
-                return true;
-            }
-        }
-        return false;
+        books.get(title).add(c);
     }
     
     public void returnCopy(Copy copy) {
@@ -89,14 +80,9 @@ public class Catalogue {
         return copy;
     }
 
-    public ArrayList<Copy> getCopies(Title t) {
-        return books.get(t);
-    }
 
-
-    //optional functions. Not required by the Prof:
-
-    public char calculateISBNCheckDigit(String str) {
+    //TODO: test
+    public char checkISBN(String str) {
         int sum = 0;
         int multiply = 1;
 
@@ -112,6 +98,42 @@ public class Catalogue {
 
         int checkDigit = (10 - (sum % 10)) % 10;
         return (char) (checkDigit + '0');
+    }
+
+    //TODO: implement
+    //Question: what input, what output?
+    //returns the HashMapValue of the given book. if nothing, than null.
+    public boolean checkBookAvailability(String title, String isbn){
+        return false;
+    }
+
+    //TODO: test
+    public boolean checkAvailability(String ISBN_13) {
+        var book = searchBook(ISBN_13);
+        if ( book == null) {
+            return false;
+        }
+        var copies = books.get(book);
+        for (var copy: copies) {
+            if (!copy.isRented()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //TODO:implement
+    public void removeBook(String ISBN_13){}
+    //TODO:implement
+    public void removeBook(Title title){}
+
+    //TODO:implement
+    public int findBookLocation(Title title){
+        return 0;
+    }
+    //TODO:implement
+    public int findBookLocation(String ISBN_13){
+        return 0;
     }
 
 }

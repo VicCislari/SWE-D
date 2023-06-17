@@ -10,7 +10,6 @@ public class Title {
     private LocalDate publicationDate;
     private String[] authors;
 
-    // Methods
     public Title(String title, String isbn, String publisher,  String[] authors, LocalDate publicationDate){
         this.title = title;
         this.isbn = isbn;
@@ -50,14 +49,14 @@ public class Title {
         this.authors = authors; 
     }
 
-    //TODO:
+    //TODO: implement
     public String generateBibTex(){
         //this generates a file.. but what file?
         //or thriow exception if something went wrong...
         return "hello thisis some text";
     }
 
-    //TODO:
+    //TODO: implement
     public void modifyTitle(String ISBN, String commands){
 
     }
