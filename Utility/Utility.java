@@ -72,11 +72,30 @@ public class Utility {
         }else {
             System.out.println("no copy available");
             setReservationSet(true);
-            setReservation(rentalManagement.generateReservation(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
+            setReservation(rentalManagement.reserveBook(title, lender, LocalDate.of(2020, 1, 8))); //TODO: change the waitedPickUP to the next possible PickUp date.
         }
         rentalManagement.viewRentals();
         System.out.println("\n");
         rentalManagement.viewReservations();
         System.out.println("-----------------------------");
+    }
+
+    //TODO: test
+    public char checkISBN(String str) {
+        int sum = 0;
+        int multiply = 1;
+
+        for (int i = 0; i < str.length(); i++) {
+            char digitChar = str.charAt(i);
+
+            if (Character.isDigit(digitChar)) {
+                int digit = Character.getNumericValue(digitChar);
+                sum += multiply * digit;
+                multiply = (multiply == 1) ? 3 : 1;
+            }
+        }
+
+        int checkDigit = (10 - (sum % 10)) % 10;
+        return (char) (checkDigit + '0');
     }
 }

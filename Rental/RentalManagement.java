@@ -90,7 +90,7 @@ public class RentalManagement {
         return false;
     }
 
-    public Reservation generateReservation(Title title, Lender lender, LocalDate awaitedPickUp){
+    public Reservation reserveBook(Title title, Lender lender, LocalDate awaitedPickUp){
         Reservation reservation = new Reservation(awaitedPickUp, lender, title);
         reservations.add(reservation);
         System.out.println("reservations_size: " + reservations.size());

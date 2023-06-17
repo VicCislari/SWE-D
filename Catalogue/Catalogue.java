@@ -71,25 +71,6 @@ public class Catalogue {
         return copy;
     }
 
-    //TODO: test
-    public char checkISBN(String str) {
-        int sum = 0;
-        int multiply = 1;
-
-        for (int i = 0; i < str.length(); i++) {
-            char digitChar = str.charAt(i);
-
-            if (Character.isDigit(digitChar)) {
-                int digit = Character.getNumericValue(digitChar);
-                sum += multiply * digit;
-                multiply = (multiply == 1) ? 3 : 1;
-            }
-        }
-
-        int checkDigit = (10 - (sum % 10)) % 10;
-        return (char) (checkDigit + '0');
-    }
-
     //TODO: implement
     //Question: what input, what output?
     //returns the HashMapValue of the given book. if nothing, than null.
@@ -124,6 +105,18 @@ public class Catalogue {
     //TODO:implement
     public int findBookLocation(String ISBN_13){
         return 0;
+    }
+
+    //TODO:implement
+    //returns a copy which is available online
+    public Copy openOnlineLocation(Title title){
+        return null;
+    }
+
+    //TODO:implement
+    //returns a copy which is available online
+    public Copy openOnlineLocation(String ISBN_13){
+        return null;
     }
 
 }
