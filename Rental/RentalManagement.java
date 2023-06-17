@@ -55,34 +55,17 @@ public class RentalManagement {
         rentals.add(rental);
     }
 
-    //TODO
-    public void viewRentalsofLender(Lender lender){
-        System.out.println("viewRentals \n");
-        for(int i =0; i<rentals.size();i++){
-            System.out.println(rentals.get(i).getLender().getFullname() + "\n");
-        }
-    }
-
     public void viewRentals(){
         System.out.println("viewRentals \n");
         for(int i =0; i<rentals.size();i++)
             System.out.println(rentals.get(i).getLender().getFullname());
     }
-
-    //TODO:
-    public void viewRentals(Lender lender){
-        System.out.println("viewRentals \n");
-        for(int i =0; i<rentals.size();i++)
-            System.out.println(rentals.get(i).getLender().getFullname());
-    }
-
     public void viewReservations(){
         System.out.println("viewReservations \n");
         for(int i =0; i<reservations.size();i++)
             System.out.println(reservations.get(i).getLender().getFullname());
     }
-
-    //TODO:
+    //TODO: test
     public void viewReservations(Lender lender){
         System.out.println("viewReservations \n");
         for(int i =0; i<reservations.size();i++)
@@ -125,9 +108,37 @@ public class RentalManagement {
         return false;
     }
 
+    //TODO: implement
     public String remindUser(Rental rental){
         //will only be executed if the rental is close to expiration.
         return "reminding User to return the copy";
+    }
+
+    //TODO: implement
+    public ArrayList<Rental> reportBookRentalHistory(Title title, LocalDate startPeriod, LocalDate endPeriod){
+        return null;
+    }
+    //TODO: implement
+    //this is the function for the entire history
+    public ArrayList<Rental> reportBookRentalHistory(Title title){
+        return null;
+    }
+    //TODO: implement
+    //time period missing
+    public ArrayList<Rental> reportLenderRentalHistory(Lender lender, LocalDate startPeriod, LocalDate endPeriod){
+        System.out.println("viewRentals \n");
+        for(int i =0; i<rentals.size();i++){
+            System.out.println(rentals.get(i).getLender().getFullname() + "\n");
+        }
+        return null;
+    }
+    //TODO: test
+    public ArrayList<Rental> reportLenderRentalHistory(Lender lender){
+        System.out.println("viewRentals \n");
+        for(int i =0; i<rentals.size();i++){
+            System.out.println(rentals.get(i).getLender().getFullname() + "\n");
+        }
+        return null;
     }
 
 }

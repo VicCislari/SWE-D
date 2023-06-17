@@ -45,16 +45,7 @@ public class Catalogue {
             return;
         }
         var copies = books.get(title);
-        // are you sure that wqe need to have .get(t).? can't we just do t.? doesn't that reference te exact same object in the memory which is also refered to by our books hashmap?
-        int newCopyId = 0;
-        for (var copy: copies) {
-            if (newCopyId < copy.getCopyID()) {
-                newCopyId = copy.getCopyID();
-            }
-        }
-        ++newCopyId;
-
-        Copy c = new Copy(storagePlace, newCopyId, false, title);
+        Copy c = new Copy(storagePlace, false, title);
 
         books.get(title).add(c);
     }
@@ -80,7 +71,6 @@ public class Catalogue {
         return copy;
     }
 
-
     //TODO: test
     public char checkISBN(String str) {
         int sum = 0;
@@ -103,7 +93,7 @@ public class Catalogue {
     //TODO: implement
     //Question: what input, what output?
     //returns the HashMapValue of the given book. if nothing, than null.
-    public boolean checkBookAvailability(String title, String isbn){
+    public boolean checkBookAvailability(String title, String ISBN_13){
         return false;
     }
 

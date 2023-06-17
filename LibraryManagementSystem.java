@@ -31,21 +31,18 @@ public class LibraryManagementSystem {
         Lender lender1 = userManagement.registerUser(
                 "Dima",
                 "1234",
-                "L0001",
                 "Real-address-straße",
                 "+49 1234567890");
 
         Lender lender2 = userManagement.registerUser(
                 "Vova",
                 "4321",
-                "L0002",
                 "Fake-address-straße",
                 "+49 0987654321");
 
         Lender lender3 = userManagement.registerUser(
                 "Boris",
                 "9876",
-                "L0003",
                 "Any-address-straße",
                 "+49 6574839190");
 
@@ -79,8 +76,7 @@ public class LibraryManagementSystem {
         System.out.println("All copies of " + ISBN_EXAMPLE + " (" + 
             copies.size() + "): ");
         for (var copy: copies) {
-            System.out.println(copy.getTitle().getTitle() + " " + 
-                copy.getCopyID());
+            System.out.println(copy.getTitle().getTitle());
         }
     }
 }

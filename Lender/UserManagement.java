@@ -17,33 +17,11 @@ public class UserManagement {
         this.lenders = new ArrayList<Lender>();
     }
 
-    public Lender registerUser(String fullname, String password, String lenderId, String address, String phoneNumber)
+    public Lender registerUser(String fullname, String password, String address, String phoneNumber)
     {
-        Lender lender = new Lender(fullname, password, lenderId, address, phoneNumber);
+        Lender lender = new Lender(fullname, password, address, phoneNumber);
         lenders.add(lender);
-        return lender; //I guess for future use this function shouldn't return anything, but for current testing we'll keep
-    }
-    
-    public Lender searchLender(String lenderId) {
-        Iterator<Lender> it = lenders.iterator();
-        while (it.hasNext()) {
-            Lender lender = it.next();
-            if (lender.getLenderId().equals(lenderId)) {
-                return lender;
-            }
-        }
-        return null;
-    }
-  
-    public boolean deactivateUser(String lenderId) {
-        Iterator<Lender> it = lenders.iterator();
-        while (it.hasNext()) {
-            if (it.next().getLenderId().equals(lenderId)) {
-                it.remove();
-                return true;
-            }
-        }
-        return false;
+        return lender;
     }
 
     public boolean deactivateUser(Lender lender) {
@@ -56,10 +34,9 @@ public class UserManagement {
         }
         return false;
     }
-  
-    // TODO: Deniz
-    public boolean authenticateUser(String lenderId, String password) {
+
+    // TODO: implement - Deniz
+    public boolean authenticateUser(String fullname, String password) {
         return false;
     }
-    
 }

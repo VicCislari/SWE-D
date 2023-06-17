@@ -3,13 +3,11 @@ package Catalogue;
 public class Copy {
     // Attributes
     private String storagePlace;
-    private int copyID;
     private boolean rented;
     private Title title;
     // Methods
-    public Copy(String storagePlace, int copyID, boolean rented, Title title){
+    public Copy(String storagePlace, boolean rented, Title title){
         this.storagePlace = storagePlace;
-        this.copyID = copyID;
         this.rented = rented;
         this.title = title;
     }
@@ -18,12 +16,6 @@ public class Copy {
     }
     public void setStoragePlace(String storagePlace){
         this.storagePlace = storagePlace;
-    }
-    public int getCopyID(){
-        return copyID;
-    }
-    public void setCopyID(int copyID){
-        this.copyID = copyID;
     }
     public boolean isRented(){
         return rented;
