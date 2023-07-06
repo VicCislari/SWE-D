@@ -1,4 +1,4 @@
-package Reservation;
+package Rental;
 //importing the packages
 //import Inventory.*;
 
@@ -7,11 +7,11 @@ import Catalogue.*;
 import Lender.*;
 import java.time.LocalDate;
 
-
 public class Reservation{
     private LocalDate awaited_pick_up;
     private Lender lender;
     private Title title;
+
 
     public Reservation(LocalDate awaited_pick_up, Lender lender, Title title) {
         this.awaited_pick_up = awaited_pick_up;

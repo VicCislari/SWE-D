@@ -1,4 +1,4 @@
-package Reservation;
+package Rental;
 //importing the packages
 //import Inventory.*;
 //import Title.*;
