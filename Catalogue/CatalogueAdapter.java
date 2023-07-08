@@ -23,12 +23,12 @@ public class CatalogueAdapter implements ICatalogue {
         return catalogue.searchBook(ISBN_13);
     }
 
-    public void deleteBook(String ISBN_13) {
-        deleteBook(ISBN_13);
+    public void deleteCopy(Title title) {
+        catalogue.deleteCopy(title);
     }
 
-    public void addBook(Title title, String storagePlace, boolean rented) {
-        catalogue.addBook(title, storagePlace, rented);
+    public void addCopy(Title title, String storagePlace, boolean rented) {
+        catalogue.addCopy(title, storagePlace, rented);
     }
 
     public void returnCopy(Copy copy) {

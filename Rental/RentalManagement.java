@@ -46,8 +46,14 @@ public class RentalManagement {
     }
 
     public Rental rentBook(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
+        assert (lender !=null && copy!=null && rentalDate!=null && rentalDate != null): "Pre-Condition failed. rentBook()";
+
         Rental rental = new Rental(lender, copy, rentalDate, returnDate);
+
+        assert (!rentals.contains(rental)): "Pre-Condition failed. rentBook()";
         addRental(rental);
+
+        assert (rentals.contains(rental)): "Post-Condition failed";
         return rental;
     }
 
@@ -65,6 +71,7 @@ public class RentalManagement {
         for(int i =0; i<reservations.size();i++)
             System.out.println(reservations.get(i).getLender().getFullname());
     }
+
     //TODO: test
     public void viewReservations(Lender lender){
         System.out.println("viewReservations \n");
@@ -73,6 +80,9 @@ public class RentalManagement {
     }
 
     public void returnBook(Rental rental){
+        assert (rentals.contains(rental)): "Pre-Condition failed. this rental does not exist";
+        int length_old = rentals.size();
+
         System.out.println("returning Copy: \n");
         //delete from rentals.
         for (int i=0; i< rentals.size(); i++) {
@@ -81,6 +91,9 @@ public class RentalManagement {
                 break;
             }
         }
+
+        int length_new = rentals.size();
+        assert (!rentals.contains(rental) && (length_new+1) == length_old): "Post-Condition fialed. the rental was not removed succesfully";
     }
 
     public boolean checkThroughReservations(Rental rental){

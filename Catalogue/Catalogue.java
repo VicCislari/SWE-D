@@ -31,25 +31,34 @@ public class Catalogue implements ICatalogue {
     }
 
     //this function is optional
-    public void deleteBook(String ISBN_13) {
-        var book = searchBook(ISBN_13);
-        if (book == null) {
-            return;
-        }
-        books.remove(book);
+    public void deleteCopy(Title title) {
+        assert(title != null): "Pre-Condition failed. deleteCopy()";
+        int length_old = books.get(title).size();
+
+        books.get(title).remove(0);
+
+        int length_new = books.get(title).size();
+
+        assert ((length_new-1) == length_old): "Post-Condition failed. deleteCopy()";
     }
 
     //TODO: test
-    public void addBook(Title title, String storagePlace, boolean rented) {
-        if (title == null) {
-            return;
-        }
+    public void addCopy(Title title, String storagePlace, boolean rented) {
+        assert (title != null && storagePlace != null): "Pre-condition failed. addCopy()";
+
+        int length_old=books.get(title).size();
+
         var copies = books.get(title);
         Copy c = new Copy(storagePlace, false, title);
 
+        assert (!books.get(title).contains(c)): "Pre-Condition failed. addCopy()";
+
         books.get(title).add(c);
+        int length_new=books.get(title).size();
+
+        assert (books.get(title).contains(c) && (length_new-1) == (length_old)): "Post-Condition failed. addCopy()";
     }
-    
+
     public void returnCopy(Copy copy) {
         copy.setRented(false);
         books.get(copy.getTitle()).add(copy);
@@ -93,11 +102,6 @@ public class Catalogue implements ICatalogue {
         return false;
     }
 
-    //TODO:implement
-    // look below
-    public void removeBook(String ISBN_13){}
-    //TODO:implement
-    public void removeBook(Title title){}
 
     //TODO:implement
     public int findBookLocation(Title title){

@@ -11,9 +11,9 @@ public interface ICatalogue {
 
     public Title searchBook(String ISBN_13);
 
-    public void deleteBook(String ISBN_13);
+    public void deleteCopy(Title title);
 
-    public void addBook(Title title, String storagePlace, boolean rented);
+    public void addCopy(Title title, String storagePlace, boolean rented);
 
     public void returnCopy(Copy copy);
 

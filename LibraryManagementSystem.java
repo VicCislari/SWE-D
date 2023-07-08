@@ -17,7 +17,9 @@ public class LibraryManagementSystem {
     //and instead put lenderwantsreservation in some other class such as RentalManagement.
     private static Utility utility;// = new Utility();
     private static MathLib mathlib;//
-    private static Queue queue = new Queue();//
+    private static Queue queue=new Queue();//
+    private static Person person=new Person();
+    private static GamingConsole gamingConsole;
 
     //TODO: optional
     private static void initLibrary(){
@@ -26,6 +28,9 @@ public class LibraryManagementSystem {
 
     public static void main(String[] args) {
 
+        Controller controller1 = new Controller(1);
+        Controller controller2 = new Controller(2);
+        Controller controller3 = new Controller(3);
         int x = 1;
         assert (x > 0): "pre-condition is wrong. SQRT";
         int result = mathlib.floorSqrt(x);
@@ -36,7 +41,9 @@ public class LibraryManagementSystem {
         queue.getNextElement();
         queue.getNextElement();
 
-        /*
+        person.setAge(12);
+        person.setBirthday(LocalDate.of(2002,2,14));
+
         // Attributes
         LocalDate returnDate = LocalDate.of(2020, 1, 8);
         LocalDate rentalDate = LocalDate.of(2021, 1, 8);
@@ -66,10 +73,10 @@ public class LibraryManagementSystem {
         catalogue.createBook("title2", "ISBN2", "publisher2",authors2, LocalDate.of(2021, 1, 8)); //funktioniert
 
         //TODO: maybe change the input field here just to String ISBN_13, instead of requiring such a on-elegant way around it...
-        catalogue.addBook(catalogue.searchBook("ISBN1"), "001", false);
-        catalogue.addBook(catalogue.searchBook("ISBN1"), "002", false);
-        catalogue.addBook(catalogue.searchBook("ISBN1"), "003", false);
-        catalogue.addBook(catalogue.searchBook("ISBN2"), "002", false);
+        catalogue.addCopy(catalogue.searchBook("ISBN1"), "001", false);
+        catalogue.addCopy(catalogue.searchBook("ISBN1"), "002", false);
+        catalogue.addCopy(catalogue.searchBook("ISBN1"), "003", false);
+        catalogue.addCopy(catalogue.searchBook("ISBN2"), "002", false);
 
         //set up my utilities after I have finished setting up the user and the library
         utility = new Utility(rentalManagement, catalogue);
@@ -91,8 +98,6 @@ public class LibraryManagementSystem {
         for (var copy: copies) {
             System.out.println(copy.getTitle().getTitle());
         }
-
-*/
 
     }
 
