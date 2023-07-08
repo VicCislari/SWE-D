@@ -31,9 +31,22 @@ public class LibraryManagementSystem {
         Controller controller1 = new Controller(1);
         Controller controller2 = new Controller(2);
         Controller controller3 = new Controller(3);
+
+        Controller controller4 = new Controller(4);
+
+        Controller controller5 = new Controller(5);
+
         gamingConsole.addController(controller1);
         gamingConsole.addController(controller2);
+        gamingConsole.addController(controller3);
+        gamingConsole.addController(controller4);
+        gamingConsole.addController(controller5);
+
+        gamingConsole.removeController(controller1);
         gamingConsole.removeController(controller2);
+        gamingConsole.removeController(controller3);
+        gamingConsole.removeController(controller4);
+        gamingConsole.removeController(controller5);
 
         int x = 1;
         assert (x > 0): "pre-condition is wrong. SQRT";

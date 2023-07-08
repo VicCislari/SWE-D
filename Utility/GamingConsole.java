@@ -6,7 +6,7 @@ public class GamingConsole {
     private ArrayList<Controller> Controllers = new ArrayList<Controller>();
 
     public void addController(Controller controller){
-        assert (controller!=null && !Controllers.contains(controller)):"Pre-Condition failed. addController()";
+        assert (controller!=null && !Controllers.contains(controller) && 2<=Controllers.size() && Controllers.size()<4):"Pre-Condition failed. addController()";
         int length_old = Controllers.size();
         Controllers.add(controller);
         int length_new = Controllers.size();
@@ -15,7 +15,7 @@ public class GamingConsole {
     }
 
     public void removeController(Controller controller){
-        assert (controller!=null && Controllers.contains(controller)):"Pre-Condition failed. addController()";
+        assert (controller!=null && Controllers.contains(controller) && 2<Controllers.size() && Controllers.size()<=4):"Pre-Condition failed. addController()";
         int length_old = Controllers.size();
         Controllers.remove(controller);
         int length_new = Controllers.size();
