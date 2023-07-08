@@ -19,7 +19,7 @@ public class LibraryManagementSystem {
     private static MathLib mathlib;//
     private static Queue queue=new Queue();//
     private static Person person=new Person();
-    private static GamingConsole gamingConsole;
+    private static GamingConsole gamingConsole = new GamingConsole();
 
     //TODO: optional
     private static void initLibrary(){
@@ -31,6 +31,10 @@ public class LibraryManagementSystem {
         Controller controller1 = new Controller(1);
         Controller controller2 = new Controller(2);
         Controller controller3 = new Controller(3);
+        gamingConsole.addController(controller1);
+        gamingConsole.addController(controller2);
+        gamingConsole.removeController(controller2);
+
         int x = 1;
         assert (x > 0): "pre-condition is wrong. SQRT";
         int result = mathlib.floorSqrt(x);
