@@ -21,7 +21,5 @@ public interface ICatalogue {
 
     public boolean checkAvailability(String ISBN_13);
 
-    public void removeBook(Title title);
-
     public Copy openOnlineLocation(Title title);
 }
