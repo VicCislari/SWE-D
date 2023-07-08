@@ -40,17 +40,12 @@ public class LibraryManagementSystem {
         gamingConsole.addController(controller2);
         gamingConsole.addController(controller3);
         gamingConsole.addController(controller4);
-        gamingConsole.addController(controller5);
 
         gamingConsole.removeController(controller1);
         gamingConsole.removeController(controller2);
-        gamingConsole.removeController(controller3);
-        gamingConsole.removeController(controller4);
-        gamingConsole.removeController(controller5);
 
         int x = 1;
-        assert (x > 0): "pre-condition is wrong. SQRT";
-        int result = mathlib.floorSqrt(x);
+        int result = mathlib.sqrt(x);
 
         queue.getNextElement();
         queue.getNextElement();

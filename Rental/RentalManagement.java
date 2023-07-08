@@ -46,7 +46,7 @@ public class RentalManagement {
     }
 
     public Rental rentBook(Lender lender, Copy copy, LocalDate rentalDate, LocalDate returnDate){
-        assert (lender !=null && copy!=null && rentalDate!=null && rentalDate != null): "Pre-Condition failed. rentBook()";
+        assert (lender !=null && copy!=null && rentalDate!=null && returnDate != null): "Pre-Condition failed. rentBook()";
 
         Rental rental = new Rental(lender, copy, rentalDate, returnDate);
 

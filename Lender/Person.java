@@ -11,7 +11,7 @@ public class Person {
     }
 
     public void setBirthday(LocalDate birthday) {
-        assert (birthday.isBefore(LocalDate.now())): "pre-condition failed. Birthday in future";
+        assert (birthday.isBefore(LocalDate.now())): "pre-condition failed. Birthday in future. setBirthday()";
         Birthday = birthday;
         assert (Birthday == birthday): "post-condition failed. Birthday not set correctly";
     }

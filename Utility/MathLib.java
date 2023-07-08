@@ -3,7 +3,7 @@ package Utility;
 public class MathLib {
 
     // Returns floor of square root of x
-    public static int floorSqrt(int x){
+    public static int sqrt(int x){
 
         int sqrt;
 

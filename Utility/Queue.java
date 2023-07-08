@@ -15,10 +15,12 @@ public class Queue {
 
     public String getNextElement(){
         int length_old = queue.size();
-        assert(length_old> 0) : "Pre-Condition failed. queue is empty. Queue";
+        assert(length_old > 0) : "Pre-Condition failed. queue is empty. Queue";
+
         String element = queue.remove(0);
         int length_new = queue.size();
-        assert (length_new != length_old): "something went wrong. Post Condition failed. Queue";
+        assert ((length_new +1) == length_old): "something went wrong. Post Condition failed. Queue";
+
         System.out.println(element);
         return element;
     }
