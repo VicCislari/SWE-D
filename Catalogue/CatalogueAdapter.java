@@ -39,8 +39,8 @@ public class CatalogueAdapter implements ICatalogue {
         return catalogue.rentCopy(title);
     }
 
-    public boolean checkAvailability(String ISBN_13) {
-        return catalogue.checkAvailability(ISBN_13);
+    public boolean checkAvailability(Title title) {
+        return catalogue.checkAvailability(title);
     }
 
     public void removeBook(Title title) {
