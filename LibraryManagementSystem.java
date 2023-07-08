@@ -25,10 +25,14 @@ public class LibraryManagementSystem {
     }
 
     public static void main(String[] args) {
+        int value = 15;
+        assert value >= 20 : " Underweight";
+        //System.out.println("value is " + value);
 
-        int x = 16;
-        System.out.print(mathlib.floorSqrt(x));
-
+        //int x = -1;
+        //assert (x > 0): "pre-condition is wrong. SQRT";
+        //int result = mathlib.floorSqrt(x);
+        /*
         // Attributes
         LocalDate returnDate = LocalDate.of(2020, 1, 8);
         LocalDate rentalDate = LocalDate.of(2021, 1, 8);
@@ -83,6 +87,8 @@ public class LibraryManagementSystem {
         for (var copy: copies) {
             System.out.println(copy.getTitle().getTitle());
         }
+
+*/
 
     }
 
