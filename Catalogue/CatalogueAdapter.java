@@ -43,10 +43,6 @@ public class CatalogueAdapter implements ICatalogue {
         return catalogue.checkAvailability(title);
     }
 
-    public void removeBook(Title title) {
-        catalogue.removeBook(title);
-    }
-
     public Copy openOnlineLocation(Title title) {
         return catalogue.openOnlineLocation(title);
     }
