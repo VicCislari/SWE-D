@@ -83,7 +83,7 @@ public class Catalogue implements ICatalogue {
     //TODO: implement
     //Question: what input, what output?
     //returns the HashMapValue of the given book. if nothing, than null.
-    public boolean checkBookAvailability(String title, String ISBN_13){
+    public boolean checkBookAvailability(Title title, String ISBN_13){
         return false;
     }
 
