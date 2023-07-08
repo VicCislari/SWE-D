@@ -3,7 +3,7 @@ package Catalogue;
 import java.util.*;
 import java.time.LocalDate;
 
-public class Catalogue {
+public class Catalogue implements ICatalogue {
     private Map<Title, ArrayList<Copy>> books;
 
     public ArrayList<Copy> getCopies(Title t) {
@@ -94,6 +94,7 @@ public class Catalogue {
     }
 
     //TODO:implement
+    // look below
     public void removeBook(String ISBN_13){}
     //TODO:implement
     public void removeBook(Title title){}
@@ -103,6 +104,8 @@ public class Catalogue {
         return 0;
     }
     //TODO:implement
+    // is this really needed? we can do the following using the previous method:
+    // findBookLocation(searchBook("ISBN"))
     public int findBookLocation(String ISBN_13){
         return 0;
     }
@@ -115,6 +118,7 @@ public class Catalogue {
 
     //TODO:implement
     //returns a copy which is available online
+    // look above
     public Copy openOnlineLocation(String ISBN_13){
         return null;
     }
