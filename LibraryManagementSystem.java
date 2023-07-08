@@ -4,7 +4,6 @@ import Catalogue.*;
 import Lender.*;
 import Rental.*;
 import Utility.*;
-import Utility.MathLib;
 
 public class LibraryManagementSystem {
     //Management
@@ -17,7 +16,8 @@ public class LibraryManagementSystem {
     //perhaps I should just throw a bunch of other utility functions from other classes into the utility class
     //and instead put lenderwantsreservation in some other class such as RentalManagement.
     private static Utility utility;// = new Utility();
-    private static MathLib mathlib;// = new Utility();
+    private static MathLib mathlib;//
+    private static Queue queue = new Queue();//
 
     //TODO: optional
     private static void initLibrary(){
@@ -29,6 +29,13 @@ public class LibraryManagementSystem {
         int x = 1;
         assert (x > 0): "pre-condition is wrong. SQRT";
         int result = mathlib.floorSqrt(x);
+
+        queue.getNextElement();
+        queue.getNextElement();
+        queue.getNextElement();
+        queue.getNextElement();
+        queue.getNextElement();
+
         /*
         // Attributes
         LocalDate returnDate = LocalDate.of(2020, 1, 8);
