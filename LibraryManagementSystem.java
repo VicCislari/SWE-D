@@ -4,6 +4,7 @@ import Catalogue.*;
 import Lender.*;
 import Rental.*;
 import Utility.*;
+import Utility.MathLib;
 
 public class LibraryManagementSystem {
     //Management
@@ -16,6 +17,7 @@ public class LibraryManagementSystem {
     //perhaps I should just throw a bunch of other utility functions from other classes into the utility class
     //and instead put lenderwantsreservation in some other class such as RentalManagement.
     private static Utility utility;// = new Utility();
+    private static MathLib mathlib;// = new Utility();
 
     //TODO: optional
     private static void initLibrary(){
@@ -23,6 +25,9 @@ public class LibraryManagementSystem {
     }
 
     public static void main(String[] args) {
+
+        int x = 16;
+        System.out.print(mathlib.floorSqrt(x));
 
         // Attributes
         LocalDate returnDate = LocalDate.of(2020, 1, 8);
@@ -78,5 +83,7 @@ public class LibraryManagementSystem {
         for (var copy: copies) {
             System.out.println(copy.getTitle().getTitle());
         }
+
     }
+
 }
