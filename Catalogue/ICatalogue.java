@@ -19,7 +19,7 @@ public interface ICatalogue {
 
     public Copy rentCopy(Title title);
 
-    public boolean checkAvailability(String ISBN_13);
+    public boolean checkAvailability(Title title);
 
     public Copy openOnlineLocation(Title title);
 }

@@ -88,12 +88,8 @@ public class Catalogue implements ICatalogue {
     }
 
     //TODO: test
-    public boolean checkAvailability(String ISBN_13) {
-        var book = searchBook(ISBN_13);
-        if ( book == null) {
-            return false;
-        }
-        var copies = books.get(book);
+    public boolean checkAvailability(Title title) {
+        var copies = books.get(title);
         for (var copy: copies) {
             if (!copy.isRented()) {
                 return true;
@@ -107,23 +103,10 @@ public class Catalogue implements ICatalogue {
     public int findBookLocation(Title title){
         return 0;
     }
-    //TODO:implement
-    // is this really needed? we can do the following using the previous method:
-    // findBookLocation(searchBook("ISBN"))
-    public int findBookLocation(String ISBN_13){
-        return 0;
-    }
 
     //TODO:implement
     //returns a copy which is available online
     public Copy openOnlineLocation(Title title){
-        return null;
-    }
-
-    //TODO:implement
-    //returns a copy which is available online
-    // look above
-    public Copy openOnlineLocation(String ISBN_13){
         return null;
     }
 
