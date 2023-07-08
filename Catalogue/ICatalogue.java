@@ -21,6 +21,5 @@ public interface ICatalogue {
 
     public boolean checkAvailability(Title title);
 
-
     public Copy openOnlineLocation(Title title);
 }
